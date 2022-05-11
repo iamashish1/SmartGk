@@ -9,12 +9,14 @@ class AppTheme {
   static const Color _lightSecondaryColor = Colors.white;
   static const Color _lightOnSecondaryColor = Color(0xff8D8D8D);
   static const Color _lightOnPrimaryColor = Colors.black;
+  static const Color _lightBackgroundColor = Color(0xffFEFCFD);
 
   static const Color _darkPrimaryColor = Colors.white24;
   static const Color _darkPrimaryVariantColor = Colors.black;
   static const Color _darkSecondaryColor = Colors.white;
   static const Color _darkOnSecondaryColor = Color(0xffffffff);
   static const Color _darkOnPrimaryColor = Color(0xFFC11724);
+  static const Color _darkBackgroundColor = Colors.black54;
 
   static final ThemeData lightTheme = ThemeData(
     appBarTheme: const AppBarTheme(
@@ -27,6 +29,7 @@ class AppTheme {
       secondary: _lightSecondaryColor,
       onPrimary: _lightOnPrimaryColor,
       onSecondary: _lightOnSecondaryColor,
+      background: _lightBackgroundColor,
     ),
     iconTheme: const IconThemeData(
       color: _iconColor,
@@ -47,7 +50,7 @@ class AppTheme {
       primaryContainer: _darkPrimaryVariantColor,
       secondary: _darkSecondaryColor,
       onPrimary: _darkOnPrimaryColor,
-      background: Colors.white12,
+      background: _darkBackgroundColor,
       onSecondary: _darkOnSecondaryColor,
     ),
     iconTheme: const IconThemeData(
@@ -74,6 +77,11 @@ class AppTheme {
       fontWeight: FontWeight.normal,
       color: _lightOnSecondaryColor,
     ),
+    button: _lightScreenHeading1TextStyle.copyWith(
+      fontSize: 18,
+      fontWeight: FontWeight.bold,
+      color: _lightPrimaryColor,
+    ),
   );
 
   static final TextTheme _darkTextTheme = TextTheme(
@@ -92,6 +100,11 @@ class AppTheme {
       fontSize: 15,
       fontWeight: FontWeight.normal,
       color: _darkOnSecondaryColor,
+    ),
+    button: _lightScreenHeading1TextStyle.copyWith(
+      fontSize: 18,
+      fontWeight: FontWeight.bold,
+      color: _darkPrimaryColor,
     ),
   );
 

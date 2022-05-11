@@ -8,4 +8,7 @@ class AssetsConstants {
   static const String favIconSvg = '$iconAssetsBase/fav.svg';
   static const String homeIconSvg = '$iconAssetsBase/home.svg';
   static const String settingIconSvg = '$iconAssetsBase/setting.svg';
+
+  ///all images
+  static const String splashNepaliWedding = '$imageAssetBase/cartoon-nepali-wedding.png';
 }

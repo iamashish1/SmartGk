@@ -4,6 +4,7 @@ import 'package:matrimonial/utils/system_overlay_util.dart';
 import 'package:matrimonial/widgets/root_app.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'app/matrimonial_router.gr.dart';
 import 'cubit/theme_mode_change_cubit.dart';
 import 'services/shared_preferences_services.dart';
 
@@ -22,6 +23,7 @@ void main() async {
 
   ///initializing the instance of shared preferences
   SharedPreferences prefs = await SharedPreferences.getInstance();
+
   runApp(MainApp(
     sharedPreferences: prefs,
   ));
@@ -36,6 +38,9 @@ class MainApp extends StatefulWidget {
 
 class _MainAppState extends State<MainApp> {
   late SharedPreferencesServices sharedPreferencesServices;
+
+  final _mRouter = MatrimonialRouter();
+
   @override
   void initState() {
     super.initState();
@@ -59,7 +64,9 @@ class _MainAppState extends State<MainApp> {
             ),
           ),
         ],
-        child: RootApp(),
+        child: RootApp(
+          mRouter: _mRouter,
+        ),
       ),
     );
   }
