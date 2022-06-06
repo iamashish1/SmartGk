@@ -1,18 +1,20 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:matrimonial/modules/main/screens/home.dart';
+import 'package:smartgk/modules/auth/screens/login.dart';
 
 import '../modules/auth/screens/sign_up.dart';
-import '../widgets/splash.dart';
+import '../modules/main/screens/home.dart';
 
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
     AutoRoute(page: Home, path: 'home'),
     AutoRoute(
-      page: Splash,
+      page: LoginScreen,
       initial: true,
     ),
-    AutoRoute(page: SignUp),
+    AutoRoute(
+      page: SignUp,
+    ),
   ],
 )
-class $MatrimonialRouter {}
+class $SmartGKRouter {}

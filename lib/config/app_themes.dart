@@ -3,61 +3,28 @@ import 'package:flutter/material.dart';
 class AppTheme {
   AppTheme._();
 
-  static const Color _iconColor = Color(0xff8D8D8D);
-  static const Color _lightPrimaryColor = Color(0xFFC11724);
-  static const Color _lightPrimaryVariantColor = Color(0x77C11724);
-  static const Color _lightSecondaryColor = Colors.white;
-  static const Color _lightOnSecondaryColor = Color(0xff8D8D8D);
-  static const Color _lightOnPrimaryColor = Colors.black;
-  static const Color _lightBackgroundColor = Color(0xffFEFCFD);
+  static const Color _iconColor = Color(0XFF9ED263);
+  static Color accentPrimary = const Color(0xff9ED263).withOpacity(0.2);
+  static const Color _primaryColor = Color(0XFF9ED263);
+  static const Color _primaryWhite = Colors.white;
+  static const Color _primaryGrey = Color(0xff8D8D8D);
+  static const Color _primaryBlack = Color(0xff1A1A37);
 
-  static const Color _darkPrimaryColor = Colors.white24;
-  static const Color _darkPrimaryVariantColor = Colors.black;
-  static const Color _darkSecondaryColor = Colors.white;
-  static const Color _darkOnSecondaryColor = Color(0xffffffff);
-  static const Color _darkOnPrimaryColor = Color(0xFFC11724);
-  static const Color _darkBackgroundColor = Colors.black54;
+  static Color accentGrey = const Color(0x00000034);
 
   static final ThemeData lightTheme = ThemeData(
-    appBarTheme: const AppBarTheme(
-      backgroundColor: _lightSecondaryColor,
-      iconTheme: IconThemeData(color: _lightOnSecondaryColor),
-    ),
-    colorScheme: const ColorScheme.light(
-      primary: _lightPrimaryColor,
-      primaryContainer: _lightPrimaryVariantColor,
-      secondary: _lightSecondaryColor,
-      onPrimary: _lightOnPrimaryColor,
-      onSecondary: _lightOnSecondaryColor,
-      background: _lightBackgroundColor,
-    ),
+    colorScheme: ColorScheme.light(
+        background: _iconColor,
+        onSecondary: accentGrey,
+        primary: _primaryColor,
+        onPrimary: _primaryBlack),
     iconTheme: const IconThemeData(
       color: _iconColor,
     ),
     textTheme: _lightTextTheme,
-    dividerTheme: const DividerThemeData(color: Colors.black12),
-  );
-
-  ///todo : need to check style of the dark theme if needed
-  static final ThemeData darkTheme = ThemeData(
-    scaffoldBackgroundColor: _darkPrimaryColor,
-    appBarTheme: const AppBarTheme(
-      color: _darkPrimaryVariantColor,
-      iconTheme: IconThemeData(color: _darkOnPrimaryColor),
+    dividerTheme: const DividerThemeData(
+      color: Colors.black12,
     ),
-    colorScheme: const ColorScheme.dark(
-      primary: _darkPrimaryColor,
-      primaryContainer: _darkPrimaryVariantColor,
-      secondary: _darkSecondaryColor,
-      onPrimary: _darkOnPrimaryColor,
-      background: _darkBackgroundColor,
-      onSecondary: _darkOnSecondaryColor,
-    ),
-    iconTheme: const IconThemeData(
-      color: _iconColor,
-    ),
-    textTheme: _darkTextTheme,
-    dividerTheme: const DividerThemeData(color: Colors.black),
   );
 
   static final TextTheme _lightTextTheme = TextTheme(
@@ -65,55 +32,29 @@ class AppTheme {
     headline2: _lightScreenHeading1TextStyle.copyWith(
       fontSize: 20,
       fontWeight: FontWeight.normal,
-      color: _lightSecondaryColor,
+      color: _primaryBlack,
     ),
     bodyText1: _lightScreenHeading1TextStyle.copyWith(
       fontSize: 16,
       fontWeight: FontWeight.normal,
-      color: _lightSecondaryColor,
+      color: _primaryBlack,
     ),
     bodyText2: _lightScreenHeading1TextStyle.copyWith(
       fontSize: 15,
       fontWeight: FontWeight.normal,
-      color: _lightOnSecondaryColor,
+      color: _primaryGrey,
     ),
     button: _lightScreenHeading1TextStyle.copyWith(
       fontSize: 18,
-      fontWeight: FontWeight.bold,
-      color: _lightPrimaryColor,
-    ),
-  );
-
-  static final TextTheme _darkTextTheme = TextTheme(
-    headline1: _darkScreenHeading1TextStyle,
-    headline2: _darkScreenHeading1TextStyle.copyWith(
-      fontSize: 20,
-      fontWeight: FontWeight.normal,
-      color: _darkSecondaryColor,
-    ),
-    bodyText1: _lightScreenHeading1TextStyle.copyWith(
-      fontSize: 16,
-      fontWeight: FontWeight.normal,
-      color: _darkSecondaryColor,
-    ),
-    bodyText2: _lightScreenHeading1TextStyle.copyWith(
-      fontSize: 15,
-      fontWeight: FontWeight.normal,
-      color: _darkOnSecondaryColor,
-    ),
-    button: _lightScreenHeading1TextStyle.copyWith(
-      fontSize: 18,
-      fontWeight: FontWeight.bold,
-      color: _darkPrimaryColor,
+      fontWeight: FontWeight.w600,
+      color: _primaryWhite,
     ),
   );
 
   static const TextStyle _lightScreenHeading1TextStyle = TextStyle(
-    fontSize: 24.0,
-    fontWeight: FontWeight.bold,
-    color: _lightOnPrimaryColor,
-    fontFamily: "ProximaNova",
+    fontSize: 28.0,
+    fontWeight: FontWeight.w600,
+    color: _primaryBlack,
+    fontFamily: "Montserrat",
   );
-
-  static final TextStyle _darkScreenHeading1TextStyle = _lightScreenHeading1TextStyle.copyWith(color: _darkOnPrimaryColor);
 }

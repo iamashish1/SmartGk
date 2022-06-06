@@ -1,5 +1,5 @@
-name: matrimonial
-description: A project by matrimonial.
+name: smartgk
+description: A project by smartgk.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -46,17 +46,9 @@ flutter:
     - assets/images/
 
   fonts:
-    - family: ProximaNova
+    - family: Montserrat
       fonts:
-        - asset: assets/fonts/proximaNova/ProximaNova.otf
-        - asset: assets/fonts/proximaNova/ProximaNova_Black.otf
-        - asset: assets/fonts/proximaNova/ProximaNova_Bold.otf
-        - asset: assets/fonts/proximaNova/ProximaNova_ExtraBold.otf
-        - asset: assets/fonts/proximaNova/ProximaNova_Light.otf
-        - asset: assets/fonts/proximaNova/ProximaNova_Medium.otf
-        - asset: assets/fonts/proximaNova/ProximaNova_Regular.otf
-        - asset: assets/fonts/proximaNova/ProximaNova_SemiBold.otf
-        - asset: assets/fonts/proximaNova/ProximaNova_Thin.otf
+        - asset: assets/fonts/montserrat/Montserrat-Regular.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

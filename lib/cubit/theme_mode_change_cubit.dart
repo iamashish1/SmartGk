@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:matrimonial/services/shared_preferences_services.dart';
+
+import '../services/shared_preferences_services.dart';
 
 class ThemeModeChangeCubit extends Cubit<bool> {
   ThemeModeChangeCubit({

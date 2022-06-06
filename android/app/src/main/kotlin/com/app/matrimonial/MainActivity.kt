@@ -1,4 +1,4 @@
-package com.app.matrimonial
+package com.app.smartGK
 
 import io.flutter.embedding.android.FlutterActivity
 

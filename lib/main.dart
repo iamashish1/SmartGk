@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:matrimonial/utils/system_overlay_util.dart';
-import 'package:matrimonial/widgets/root_app.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:smartgk/utils/system_overlay_util.dart';
 
-import 'app/matrimonial_router.gr.dart';
-import 'cubit/theme_mode_change_cubit.dart';
+import 'app/smart_gk_router.gr.dart';
 import 'services/shared_preferences_services.dart';
+import 'root_app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,12 +38,13 @@ class MainApp extends StatefulWidget {
 class _MainAppState extends State<MainApp> {
   late SharedPreferencesServices sharedPreferencesServices;
 
-  final _mRouter = MatrimonialRouter();
+  final _mRouter = SmartGKRouter();
 
   @override
   void initState() {
     super.initState();
-    sharedPreferencesServices = SharedPreferencesServices(widget.sharedPreferences);
+    sharedPreferencesServices =
+        SharedPreferencesServices(widget.sharedPreferences);
   }
 
   @override
@@ -55,18 +55,8 @@ class _MainAppState extends State<MainApp> {
           create: (_) => sharedPreferencesServices,
         ),
       ],
-      child: MultiBlocProvider(
-        providers: [
-          BlocProvider(
-            create: (_) => ThemeModeChangeCubit(
-              initialValue: sharedPreferencesServices.getThemeStyleIsDarkMode(),
-              sharedPreferencesServices: sharedPreferencesServices,
-            ),
-          ),
-        ],
-        child: RootApp(
-          mRouter: _mRouter,
-        ),
+      child: RootApp(
+        mRouter: _mRouter,
       ),
     );
   }
