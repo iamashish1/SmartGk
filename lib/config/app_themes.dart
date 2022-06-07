@@ -9,10 +9,18 @@ class AppTheme {
   static const Color _primaryWhite = Colors.white;
   static const Color _primaryGrey = Color(0xff8D8D8D);
   static const Color _primaryBlack = Color(0xff1A1A37);
-
-  static Color accentGrey = const Color(0x00000034);
+  static Color accentGrey = const Color(0xffFAFAFA);
 
   static final ThemeData lightTheme = ThemeData(
+    appBarTheme: const AppBarTheme(
+      elevation: 2,
+      backgroundColor: _primaryWhite,
+      actionsIconTheme: IconThemeData(color: _primaryBlack, size: 21),
+      iconTheme: IconThemeData(
+        size: 24,
+        color: _iconColor,
+      ),
+    ),
     colorScheme: ColorScheme.light(
         background: _iconColor,
         onSecondary: accentGrey,

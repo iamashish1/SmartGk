@@ -25,8 +25,9 @@ class AuthButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+
     return InkWell(
-      onTap: () => onPressed,
+      onTap: onPressed,
       child: Container(
         height: height ?? 50.h,
         width: width ?? 310.w,

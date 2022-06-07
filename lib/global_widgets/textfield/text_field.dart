@@ -1,15 +1,20 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:smartgk/constants/widget_constants.dart';
 import 'package:smartgk/global_widgets/helper_widget/black_space.dart';
 
 class PrimaryTextField extends StatelessWidget {
+  final TextEditingController? controller;
   final String? label;
   final String? hintText;
-  const PrimaryTextField({Key? key, this.label, this.hintText})
+  final FocusNode? nextFocusNodes;
+  final FocusNode? curentFocusNode;
+  const PrimaryTextField(
+      {Key? key,
+      this.label,
+      this.nextFocusNodes,
+      this.curentFocusNode,
+      this.controller,
+      this.hintText})
       : super(key: key);
 
   @override
@@ -39,11 +44,15 @@ class PrimaryTextField extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
             ),
             child: TextFormField(
+              onFieldSubmitted: (nextFocusNodes != null)
+                  ? (value) =>
+                      FocusScope.of(context).requestFocus(nextFocusNodes)
+                  : (value) {},
+              focusNode: curentFocusNode,
+              controller: controller,
               decoration: InputDecoration(
                 border: InputBorder.none,
                 hintText: hintText,
-                hintStyle: theme.textTheme.bodyText1
-                    ?.copyWith(color: theme.colorScheme.onSecondary),
                 contentPadding: const EdgeInsets.symmetric(horizontal: 12),
               ),
             ),

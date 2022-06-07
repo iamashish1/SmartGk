@@ -13,9 +13,9 @@
 import 'package:auto_route/auto_route.dart' as _i4;
 import 'package:flutter/material.dart' as _i5;
 
-import '../modules/auth/screens/login.dart' as _i2;
-import '../modules/auth/screens/sign_up.dart' as _i3;
-import '../modules/main/screens/home.dart' as _i1;
+import '../modules/auth/screens/login_screen.dart' as _i2;
+import '../modules/auth/screens/sign_up_screen.dart' as _i3;
+import '../modules/main/screens/home_screen.dart' as _i1;
 
 class SmartGKRouter extends _i4.RootStackRouter {
   SmartGKRouter([_i5.GlobalKey<_i5.NavigatorState>? navigatorKey])
@@ -23,34 +23,34 @@ class SmartGKRouter extends _i4.RootStackRouter {
 
   @override
   final Map<String, _i4.PageFactory> pagesMap = {
-    Home.name: (routeData) {
+    HomeScreen.name: (routeData) {
       return _i4.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i1.Home());
+          routeData: routeData, child: const _i1.HomeScreen());
     },
     LoginScreen.name: (routeData) {
       return _i4.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i2.LoginScreen());
     },
-    SignUp.name: (routeData) {
+    SignUpScreen.name: (routeData) {
       return _i4.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i3.SignUp());
+          routeData: routeData, child: const _i3.SignUpScreen());
     }
   };
 
   @override
   List<_i4.RouteConfig> get routes => [
-        _i4.RouteConfig(Home.name, path: 'home'),
+        _i4.RouteConfig(HomeScreen.name, path: 'home'),
         _i4.RouteConfig(LoginScreen.name, path: '/'),
-        _i4.RouteConfig(SignUp.name, path: '/sign-up')
+        _i4.RouteConfig(SignUpScreen.name, path: '/sign-up-screen')
       ];
 }
 
 /// generated route for
-/// [_i1.Home]
-class Home extends _i4.PageRouteInfo<void> {
-  const Home() : super(Home.name, path: 'home');
+/// [_i1.HomeScreen]
+class HomeScreen extends _i4.PageRouteInfo<void> {
+  const HomeScreen() : super(HomeScreen.name, path: 'home');
 
-  static const String name = 'Home';
+  static const String name = 'HomeScreen';
 }
 
 /// generated route for
@@ -62,9 +62,9 @@ class LoginScreen extends _i4.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i3.SignUp]
-class SignUp extends _i4.PageRouteInfo<void> {
-  const SignUp() : super(SignUp.name, path: '/sign-up');
+/// [_i3.SignUpScreen]
+class SignUpScreen extends _i4.PageRouteInfo<void> {
+  const SignUpScreen() : super(SignUpScreen.name, path: '/sign-up-screen');
 
-  static const String name = 'SignUp';
+  static const String name = 'SignUpScreen';
 }
