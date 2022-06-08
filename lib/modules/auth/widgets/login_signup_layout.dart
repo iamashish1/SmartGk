@@ -1,10 +1,11 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smartgk/modules/auth/widgets/auth_scaffold.dart';
 
+import '../../../app/smart_gk_router.gr.dart';
 import '../../../global_widgets/buttons/auth_button.dart';
 import '../../../global_widgets/helper_widget/black_space.dart';
 import '../../../global_widgets/textfield/text_field.dart';
@@ -166,17 +167,20 @@ class _LoginSignUpLayoutState extends State<LoginSignUpLayout> {
               ),
               VerticalSpace(15.h),
               //Social media login section
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ...['apple', 'fb', 'google'].map((e) => Container(
-                        margin: const EdgeInsets.all(5),
-                        height: 51.h,
-                        width: 51.h,
-                        decoration: const BoxDecoration(
-                            color: Colors.white, shape: BoxShape.circle),
-                      ))
-                ],
+              GestureDetector(
+                onTap: (() => context.router.push(const CategoryListScreen())),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ...['', 'fb', 'google'].map((e) => Container(
+                          margin: const EdgeInsets.all(5),
+                          height: 51.h,
+                          width: 51.h,
+                          decoration: const BoxDecoration(
+                              color: Colors.white, shape: BoxShape.circle),
+                        ))
+                  ],
+                ),
               ),
               VerticalSpace(15.h),
               //End of social media login section

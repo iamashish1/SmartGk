@@ -5,34 +5,44 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smartgk/constants/assets_constants.dart';
 
 class PrimaryScaffold extends StatelessWidget {
-  final Widget child;
-  const PrimaryScaffold({required this.child, Key? key}) : super(key: key);
+  final String? appBarTitle;
+  final Widget? child;
+  final Widget? appbarChild;
+  const PrimaryScaffold(
+      {this.child, Key? key, this.appbarChild, this.appBarTitle})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Scaffold(
       backgroundColor: theme.colorScheme.onSecondary,
+      extendBody: true,
       appBar: CardWidget(
         child: SizedBox(
             height: 80.h,
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Smart GK',
-                    style: theme.textTheme.headline2?.copyWith(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  SvgPicture.asset(
-                    AssetsConstants.bellIconSvg,
-                  ),
-                ],
+              padding: const EdgeInsets.symmetric(
+                horizontal: 30,
+                vertical: 10,
               ),
+              child: appbarChild ??
+                  Row(
+                    children: [
+                      InkWell(
+                          onTap: () => Navigator.pop(context),
+                          child: SvgPicture.asset(AssetsConstants.backIconSvg)),
+                      const Spacer(),
+                      Text(
+                        appBarTitle ?? '',
+                        style: theme.textTheme.headline2?.copyWith(
+                          fontSize: 24,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      const Spacer(),
+                    ],
+                  ),
             )),
       ),
       body: child,

@@ -1,6 +1,7 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPreferencesServices {
+  // ignore: constant_identifier_names
   static const CUSTOM_THEME_IS_DARK_MODE = 'CUSTOM_THEME_IS_DARK_MODE';
 
   final SharedPreferences prefs;

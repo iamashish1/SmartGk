@@ -20,7 +20,8 @@ class SystemOverlayUtil {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
   }
 
-  static void showSystemUiOverlay({List<SystemUiOverlay>? systemUiOverlayList}) {
+  static void showSystemUiOverlay(
+      {List<SystemUiOverlay>? systemUiOverlayList}) {
     SystemChrome.setEnabledSystemUIMode(
       SystemUiMode.manual,
       overlays: systemUiOverlayList ??

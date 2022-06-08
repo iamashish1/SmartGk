@@ -6,6 +6,8 @@ class AssetsConstants {
   ///All icons
   static const String bellIconSvg = '$iconAssetsBase/notification.svg';
   static const String backIconSvg = '$iconAssetsBase/back.svg';
+  static const String mailIconSvg = '$iconAssetsBase/mail.svg';
+  static const String deleteIconSvg = '$iconAssetsBase/delete.svg';
 
   ///all images
   static const String girl = '$imageAssetBase/image.png';
