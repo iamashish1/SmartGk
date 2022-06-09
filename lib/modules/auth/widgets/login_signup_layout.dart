@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smartgk/modules/auth/widgets/auth_scaffold.dart';
 
 import '../../../app/smart_gk_router.gr.dart';
-import '../../../global_widgets/buttons/auth_button.dart';
+import '../../../global_widgets/buttons/primary_button.dart';
 import '../../../global_widgets/helper_widget/black_space.dart';
 import '../../../global_widgets/textfield/text_field.dart';
 
@@ -139,7 +139,7 @@ class _LoginSignUpLayoutState extends State<LoginSignUpLayout> {
                       ),
               ),
               VerticalSpace(15.h),
-              AuthButton(
+              PrimaryButton(
                 onPressed: widget.onPrimaryButtonTap,
                 label: widget.isLogin ? 'Log in' : 'Sign Up',
               ),

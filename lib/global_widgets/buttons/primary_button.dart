@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class AuthButton extends StatelessWidget {
-  const AuthButton({
+class PrimaryButton extends StatelessWidget {
+  const PrimaryButton({
     Key? key,
     this.onPressed,
     this.color,
@@ -28,20 +28,23 @@ class AuthButton extends StatelessWidget {
 
     return InkWell(
       onTap: onPressed,
-      child: Container(
-        height: height ?? 50.h,
-        width: width ?? 310.w,
-        decoration: BoxDecoration(
-          color: color ?? theme.colorScheme.background,
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: child ??
-            Center(
-              child: Text(
-                label,
-                style: theme.textTheme.button,
+      child: Align(
+        alignment: Alignment.topCenter,
+        child: Container(
+          height: height ?? 50.h,
+          width: width ?? 310.w,
+          decoration: BoxDecoration(
+            color: color ?? theme.colorScheme.background,
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: child ??
+              Center(
+                child: Text(
+                  label,
+                  style: theme.textTheme.button,
+                ),
               ),
-            ),
+        ),
       ),
     );
   }

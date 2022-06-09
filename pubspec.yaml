@@ -26,6 +26,7 @@ dependencies:
   auto_route: ^4.0.0
   stacked: ^2.3.6
   stacked_services: ^0.8.22+1
+  flutter_rating_bar: ^4.0.1
 #  get: ^4.6.1
 #  injectable: ^1.5.3
 
