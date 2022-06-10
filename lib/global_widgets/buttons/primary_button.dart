@@ -12,9 +12,13 @@ class PrimaryButton extends StatelessWidget {
     this.child,
     this.elevation,
     required this.label,
+    this.labelStyle,
+    this.radius,
   }) : super(key: key);
   final void Function()? onPressed;
   final Color? color;
+  final double? radius;
+  final TextStyle? labelStyle;
   final double? height;
   final double? width;
   final ShapeBorder? shapeBorder;
@@ -35,13 +39,15 @@ class PrimaryButton extends StatelessWidget {
           width: width ?? 310.w,
           decoration: BoxDecoration(
             color: color ?? theme.colorScheme.background,
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(
+              radius ?? 10,
+            ),
           ),
           child: child ??
               Center(
                 child: Text(
                   label,
-                  style: theme.textTheme.button,
+                  style: labelStyle ?? theme.textTheme.button,
                 ),
               ),
         ),

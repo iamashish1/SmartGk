@@ -8,7 +8,7 @@ import 'package:smartgk/modules/auth/widgets/auth_scaffold.dart';
 import '../../../app/smart_gk_router.gr.dart';
 import '../../../global_widgets/buttons/primary_button.dart';
 import '../../../global_widgets/helper_widget/black_space.dart';
-import '../../../global_widgets/textfield/text_field.dart';
+import '../../../global_widgets/textfield/primary_text_field.dart';
 
 class LoginSignUpLayout extends StatefulWidget {
   final bool isLogin;

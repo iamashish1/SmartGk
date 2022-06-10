@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:smartgk/constants/assets_constants.dart';
@@ -12,37 +11,13 @@ import 'package:smartgk/global_widgets/buttons/primary_button.dart';
 import 'package:smartgk/global_widgets/helper_widget/black_space.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
+import '../../../app/smart_gk_router.gr.dart';
+import '../widgets/course_content_container_widget.dart';
+
 class CourseScreen extends StatelessWidget {
   const CourseScreen({Key? key}) : super(key: key);
 
   @override
-  // Widget build(BuildContext context) {
-  //   return Scaffold(
-  //     body: SingleChildScrollView(
-  //       child: Column(
-  //         children: [
-  //           Stack(
-  //             children: [
-  //               Image.asset(
-  //                 AssetsConstants.girl,
-  //                 width: 390.w,
-  //                 height: 160.h,
-  //                 fit: BoxFit.cover,
-  //               ),
-  //               Positioned(
-  //                 top: 21.h,
-  //                 left: 20.w,
-  //                 child: SvgPicture.asset(
-  //                   AssetsConstants.backIconSvg,
-  //                   color: Colors.white,
-  //                 ),
-  //               )
-  //             ],
-  //           )
-  //         ],
-  //       ),
-  //     ),
-  //   );
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
     return Scaffold(
@@ -210,55 +185,51 @@ class CourseScreen extends StatelessWidget {
                     runSpacing: 10,
                     spacing: 10,
                     children: [
-                      ...[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '1',
-                      ]
-                          .map((e) => Container(
-                                alignment: Alignment.center,
-                                height: e != '1' ? 138.h : 127.h,
-                                width: e != '1' ? 170.w : 296.w,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  border: Border.all(
-                                      color: theme.colorScheme.primary),
-                                ),
-                                child: Column(
-                                  children: [
-                                    Container(
-                                      height: 52.h,
-                                      width: 52.h,
-                                      decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          color: theme.colorScheme.primary),
-                                      child: Center(
-                                          child: Icon(
-                                        Icons.video_call,
-                                        color: Colors.white,
-                                      )),
-                                    ),
-                                    Text(
-                                      'Live Class',
-                                      textAlign: TextAlign.center,
-                                      style: theme.textTheme.bodyText1
-                                          ?.copyWith(
-                                              fontSize: 20,
-                                              fontWeight: FontWeight.bold),
-                                    ),
-                                    Text(
-                                      'Live classes with instructors',
-                                      textAlign: TextAlign.center,
-                                    )
-                                  ],
-                                ),
-                              ))
-                          .toList(),
+                      CourseContentContainer(
+                        onPress: () => context.router.push(
+                          LiveClass(),
+                        ),
+                        desc: "Live Class with instructors",
+                        icon: Icons.video_call,
+                        name: 'Live Class',
+                      ),
+                      CourseContentContainer(
+                        onPress: () => context.router.push(
+                          VideoScreen(),
+                        ),
+                        desc: "Live Class with instructors",
+                        icon: Icons.video_call,
+                        name: 'Video',
+                      ),
+                      CourseContentContainer(
+                        onPress: () => context.router.push(
+                          NotesScreen(),
+                        ),
+                        desc: "Live Class with instructors",
+                        icon: Icons.video_call,
+                        name: 'Notes',
+                      ),
+                      CourseContentContainer(
+                        onPress: () => context.router.push(
+                          ExamScreen(),
+                        ),
+                        desc: "Live Class with instructors",
+                        icon: Icons.video_call,
+                        name: 'Exams',
+                      ),
+                      CourseContentContainer(
+                        height: 127.h,
+                        width: 296.w,
+                        onPress: () => context.router.push(
+                          LiveClass(),
+                        ),
+                        desc: "Live Class with instructors",
+                        icon: Icons.video_call,
+                        name: 'Discussion Forum',
+                      ),
                     ]),
               ),
-              Text('Rate the course'),
+              const Text('Rate the course'),
               BorderContainer(
                 height: 178.h,
                 width: 330.w,

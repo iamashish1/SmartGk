@@ -18,7 +18,7 @@ void main() async {
   SystemOverlayUtil.setOrientation();
 
   ///change the status bar color to white [default]
-  SystemOverlayUtil.changeSystemBarColor(color: Color(0XFF9ED263));
+  SystemOverlayUtil.changeSystemBarColor(color: const Color(0XFF9ED263));
 
   ///initializing the instance of shared preferences
   SharedPreferences prefs = await SharedPreferences.getInstance();

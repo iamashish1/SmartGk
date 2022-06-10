@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BorderContainer extends StatelessWidget {
-  final Decoration? decoration;
+  final BorderRadiusGeometry? borderRadius;
   final double? height;
   final Color? color;
   final double? width;
@@ -12,7 +12,7 @@ class BorderContainer extends StatelessWidget {
   const BorderContainer({
     Key? key,
     this.child,
-    this.decoration,
+    this.borderRadius,
     this.padding,
     this.color,
     this.margin,
@@ -30,12 +30,11 @@ class BorderContainer extends StatelessWidget {
         padding: padding,
         height: height ?? 0,
         width: width ?? 350.w,
-        decoration: decoration ??
-            BoxDecoration(
-              color: color,
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: theme.colorScheme.primary),
-            ),
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: borderRadius ?? BorderRadius.circular(10),
+          border: Border.all(color: theme.colorScheme.primary),
+        ),
         child: child,
       ),
     );
