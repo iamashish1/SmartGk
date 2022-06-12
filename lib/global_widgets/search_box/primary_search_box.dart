@@ -7,7 +7,15 @@ class PrimarySearchBox extends StatelessWidget {
   final String? placeholder;
   final double? height;
   final double? width;
-  const PrimarySearchBox({Key? key, this.placeholder, this.height, this.width})
+  final bool? hasBorder;
+  final double? elevation;
+  const PrimarySearchBox(
+      {Key? key,
+      this.placeholder,
+      this.height,
+      this.width,
+      this.hasBorder,
+      this.elevation})
       : super(key: key);
 
   @override
@@ -18,9 +26,14 @@ class PrimarySearchBox extends StatelessWidget {
         width: width ?? 241.w,
         child: Card(
           shape: RoundedRectangleBorder(
+            side: BorderSide(
+                color: hasBorder != null && hasBorder == true
+                    ? theme.colorScheme.primary
+                    : Colors.white,
+                width: 1),
             borderRadius: BorderRadius.circular(15.0),
           ),
-          elevation: 5,
+          elevation: elevation ?? 5,
           child: TextField(
             decoration: InputDecoration(
                 hintText: placeholder ?? 'Search for courses',

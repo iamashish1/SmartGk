@@ -14,6 +14,7 @@ class PrimaryButton extends StatelessWidget {
     required this.label,
     this.labelStyle,
     this.radius,
+    this.align,
   }) : super(key: key);
   final void Function()? onPressed;
   final Color? color;
@@ -21,6 +22,7 @@ class PrimaryButton extends StatelessWidget {
   final TextStyle? labelStyle;
   final double? height;
   final double? width;
+  final AlignmentGeometry? align;
   final ShapeBorder? shapeBorder;
   final Widget? child;
   final String label;
@@ -33,7 +35,7 @@ class PrimaryButton extends StatelessWidget {
     return InkWell(
       onTap: onPressed,
       child: Align(
-        alignment: Alignment.topCenter,
+        alignment: align ?? Alignment.topCenter,
         child: Container(
           height: height ?? 50.h,
           width: width ?? 310.w,

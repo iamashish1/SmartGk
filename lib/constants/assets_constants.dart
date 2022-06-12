@@ -13,6 +13,7 @@ class AssetsConstants {
   static const String playIconSvg = '$iconAssetsBase/play.svg';
   static const String timeIconSvg = '$iconAssetsBase/time.svg';
   static const String videoPlayIconSvg = '$iconAssetsBase/video_play.svg';
+  static const String diamondIconSvg = '$iconAssetsBase/diamond.svg';
 
   ///all images
   static const String girl = '$imageAssetBase/image.png';

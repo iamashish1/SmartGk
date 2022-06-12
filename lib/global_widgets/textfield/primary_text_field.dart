@@ -5,16 +5,22 @@ import 'package:smartgk/global_widgets/helper_widget/black_space.dart';
 class PrimaryTextField extends StatelessWidget {
   final TextEditingController? controller;
   final String? label;
+  final Color? color;
   final String? hintText;
+  final bool? hasBorder;
   final FocusNode? nextFocusNodes;
   final FocusNode? curentFocusNode;
+  final EdgeInsetsGeometry? padding;
   const PrimaryTextField(
       {Key? key,
       this.label,
+      this.color,
       this.nextFocusNodes,
       this.curentFocusNode,
       this.controller,
-      this.hintText})
+      this.hintText,
+      this.hasBorder,
+      this.padding})
       : super(key: key);
 
   @override
@@ -25,7 +31,7 @@ class PrimaryTextField extends StatelessWidget {
         Align(
           alignment: Alignment.centerLeft,
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 50.w),
+            padding: padding ?? EdgeInsets.symmetric(horizontal: 50.w),
             child: Text(
               label ?? '',
               style: theme.textTheme.bodyText1
@@ -40,7 +46,10 @@ class PrimaryTextField extends StatelessWidget {
             width: 310.w,
             height: 50.h,
             decoration: BoxDecoration(
-              color: Colors.white,
+              border: hasBorder == null || hasBorder == false
+                  ? null
+                  : Border.all(width: 1, color: theme.colorScheme.primary),
+              color: color ?? Colors.white,
               borderRadius: BorderRadius.circular(10),
             ),
             child: TextFormField(

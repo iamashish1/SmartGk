@@ -26,12 +26,12 @@ class BorderContainer extends StatelessWidget {
     return Align(
       alignment: Alignment.topCenter,
       child: Container(
-        margin: margin,
-        padding: padding,
-        height: height ?? 0,
-        width: width ?? 350.w,
+        margin: margin ?? const EdgeInsets.symmetric(horizontal: 20),
+        padding: padding ?? EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+        height: height,
+        width: width,
         decoration: BoxDecoration(
-          color: color,
+          color: color ?? Colors.white,
           borderRadius: borderRadius ?? BorderRadius.circular(10),
           border: Border.all(color: theme.colorScheme.primary),
         ),

@@ -211,7 +211,7 @@ class CourseScreen extends StatelessWidget {
                       ),
                       CourseContentContainer(
                         onPress: () => context.router.push(
-                          ExamScreen(),
+                          const ExamScreen(),
                         ),
                         desc: "Live Class with instructors",
                         icon: Icons.video_call,
@@ -221,7 +221,7 @@ class CourseScreen extends StatelessWidget {
                         height: 127.h,
                         width: 296.w,
                         onPress: () => context.router.push(
-                          LiveClass(),
+                          ForumsScreen(),
                         ),
                         desc: "Live Class with instructors",
                         icon: Icons.video_call,
@@ -271,7 +271,13 @@ class CourseScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              const Text('Course Review'),
+              GestureDetector(
+                onTap: (() => context.router.push(BooksListScreen())),
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: const Text('Course Review'),
+                ),
+              ),
               Container(
                 margin: defaultPadding,
                 decoration: BoxDecoration(
