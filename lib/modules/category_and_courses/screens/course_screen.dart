@@ -6,12 +6,12 @@ import 'package:flutter_svg/svg.dart';
 import 'package:smartgk/constants/assets_constants.dart';
 import 'package:smartgk/constants/widget_constants.dart';
 import 'package:smartgk/global_widgets/bottom_sheet/primary_bottom_sheet.dart';
-import 'package:smartgk/global_widgets/buttons/container/border_container.dart';
 import 'package:smartgk/global_widgets/buttons/primary_button.dart';
 import 'package:smartgk/global_widgets/helper_widget/black_space.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import '../../../app/smart_gk_router.gr.dart';
+import '../../../global_widgets/container/border_container.dart';
 import '../widgets/course_content_container_widget.dart';
 
 class CourseScreen extends StatelessWidget {
@@ -28,6 +28,7 @@ class CourseScreen extends StatelessWidget {
               leading: const Icon(
                 Icons.arrow_back,
                 size: 30,
+                color: Colors.white,
               ),
               expandedHeight: 160.h,
               floating: false,
@@ -45,14 +46,28 @@ class CourseScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Bibendum sit rutrum felis ac ut massa."),
+              VerticalSpace(20.h),
+              Text(
+                "Bibendum sit rutrum felis ac ut massa.",
+                style: theme.textTheme.headline2?.copyWith(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               VerticalSpace(10.h),
               Text(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris leo pellentesque sed elit ridiculus felis condimentum sed sit. Vel pellentesque sit mauris libero. Nunc amet adipiscing eu mauris luctus id feugiat placerat. Nunc nec, tempor at mauris, pharetra quis scelerisque eros, in. Tortor platea sed semper viverra auctor"),
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris leo pellentesque sed elit ridiculus felis condimentum sed sit. Vel pellentesque sit mauris libero. Nunc amet adipiscing eu mauris luctus id feugiat placerat. Nunc nec, tempor at mauris, pharetra quis scelerisque eros, in. Tortor platea sed semper viverra auctor",
+                style: theme.textTheme.bodyText2?.copyWith(
+                  fontSize: 14,
+                  color: Color(0xff676767),
+                ),
+              ),
               Row(
-                children: [
-                  Text('Created on:'),
-                  Text('20 january 2021'),
+                children: [ 
+                  Text('Created on:',
+                      style: theme.textTheme.bodyText1
+                          ?.copyWith(fontWeight: FontWeight.w600)),
+                  Text('20 january 2021', style: theme.textTheme.bodyText1),
                 ],
               ),
               Row(

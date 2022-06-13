@@ -29,6 +29,7 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   better_player: ^0.0.83
   eva_icons_flutter: ^3.1.0
+  persistent_bottom_nav_bar: ^4.0.2
 
 #  get: ^4.6.1
 #  injectable: ^1.5.3

@@ -6,13 +6,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smartgk/constants/assets_constants.dart';
 import 'package:smartgk/constants/widget_constants.dart';
-import 'package:smartgk/global_widgets/buttons/container/border_container.dart';
 import 'package:smartgk/global_widgets/buttons/primary_button.dart';
 import 'package:smartgk/global_widgets/heading/sectionHeading.dart';
 import 'package:smartgk/global_widgets/helper_widget/black_space.dart';
 import 'package:smartgk/global_widgets/scaffold/primary_scaffold.dart';
 
 import '../../../../app/smart_gk_router.gr.dart';
+import '../../../../global_widgets/container/border_container.dart';
 import '../../widgets/exams/exam_general_container.dart';
 
 class ExamInstructionScreen extends StatelessWidget {

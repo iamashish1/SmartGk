@@ -3,13 +3,13 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smartgk/constants/widget_constants.dart';
-import 'package:smartgk/global_widgets/buttons/container/border_container.dart';
 import 'package:smartgk/global_widgets/buttons/primary_button.dart';
 import 'package:smartgk/global_widgets/heading/sectionHeading.dart';
 import 'package:smartgk/global_widgets/helper_widget/black_space.dart';
 import 'package:smartgk/global_widgets/scaffold/primary_scaffold.dart';
 import 'package:smartgk/global_widgets/search_box/primary_search_box.dart';
 
+import '../../../../global_widgets/container/border_container.dart';
 import '../../../../global_widgets/textfield/primary_text_field.dart';
 import '../../widgets/forum/discussion_widget.dart';
 

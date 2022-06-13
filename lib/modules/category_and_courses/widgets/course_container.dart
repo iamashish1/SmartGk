@@ -9,7 +9,12 @@ import '../../../constants/assets_constants.dart';
 import '../../../global_widgets/helper_widget/black_space.dart';
 
 class CourseContainer extends StatelessWidget {
-  const CourseContainer({Key? key}) : super(key: key);
+  final EdgeInsetsGeometry? margin;
+  final double? height;
+  final double? width;
+
+  const CourseContainer({Key? key, this.margin, this.height, this.width})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +22,13 @@ class CourseContainer extends StatelessWidget {
     return GestureDetector(
       onTap: () => context.router.push(const CourseScreen()),
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 11, vertical: 10),
+        margin: margin ?? EdgeInsets.zero,
+        padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 10),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             border: Border.all(color: theme.colorScheme.primary, width: 0.8)),
-        height: 130.h,
-        width: 351.w,
+        height: height,
+        width: width,
         child: Row(
           children: [
             ClipRRect(

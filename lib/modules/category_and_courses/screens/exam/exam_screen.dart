@@ -6,7 +6,6 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smartgk/app/smart_gk_router.gr.dart';
 import 'package:smartgk/constants/widget_constants.dart';
-import 'package:smartgk/global_widgets/buttons/container/border_container.dart';
 import 'package:smartgk/global_widgets/helper_widget/black_space.dart';
 import 'package:smartgk/global_widgets/scaffold/primary_scaffold.dart';
 import 'package:smartgk/modules/category_and_courses/widgets/course_container.dart';

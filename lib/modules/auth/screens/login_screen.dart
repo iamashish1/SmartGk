@@ -9,7 +9,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LoginSignUpLayout(
-      onPrimaryButtonTap: () => context.router.push(const HomeScreen()),
+      onPrimaryButtonTap: () => context.router.push(const BottomNav()),
       onSecondaryButtonTap: () => context.router.push(const SignUpScreen()),
       isLogin: true,
     );

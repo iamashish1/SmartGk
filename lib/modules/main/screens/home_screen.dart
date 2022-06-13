@@ -2,19 +2,26 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:smartgk/app/smart_gk_router.gr.dart';
-import 'package:smartgk/constants/assets_constants.dart';
-import 'package:smartgk/global_widgets/course_widgets/course_container_widget.dart';
-import 'package:smartgk/global_widgets/course_widgets/course_heading.dart';
-import 'package:smartgk/global_widgets/helper_widget/black_space.dart';
-import 'package:smartgk/global_widgets/scaffold/primary_scaffold.dart';
 
-class HomeScreen extends StatelessWidget {
+import '../../../app/smart_gk_router.gr.dart';
+import '../../../constants/assets_constants.dart';
+import '../../../global_widgets/course_widgets/course_container_widget.dart';
+import '../../../global_widgets/course_widgets/course_heading.dart';
+import '../../../global_widgets/helper_widget/black_space.dart';
+import '../../../global_widgets/scaffold/primary_scaffold.dart';
+
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+
     return PrimaryScaffold(
       appbarChild: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

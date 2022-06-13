@@ -7,6 +7,7 @@ class PrimaryTextField extends StatelessWidget {
   final String? label;
   final Color? color;
   final String? hintText;
+  final TextStyle? labelStyle;
   final bool? hasBorder;
   final FocusNode? nextFocusNodes;
   final FocusNode? curentFocusNode;
@@ -15,6 +16,7 @@ class PrimaryTextField extends StatelessWidget {
       {Key? key,
       this.label,
       this.color,
+      this.labelStyle,
       this.nextFocusNodes,
       this.curentFocusNode,
       this.controller,
@@ -34,7 +36,7 @@ class PrimaryTextField extends StatelessWidget {
             padding: padding ?? EdgeInsets.symmetric(horizontal: 50.w),
             child: Text(
               label ?? '',
-              style: theme.textTheme.bodyText1
+              style: labelStyle??theme.textTheme.bodyText1
                   ?.copyWith(fontWeight: FontWeight.w500),
             ),
           ),

@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:smartgk/global_widgets/buttons/container/border_container.dart';
 import 'package:smartgk/global_widgets/helper_widget/black_space.dart';
+
+import '../../../../global_widgets/container/border_container.dart';
 
 class DiscussionWidget extends StatelessWidget {
   const DiscussionWidget({Key? key}) : super(key: key);

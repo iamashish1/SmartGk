@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../constants/assets_constants.dart';
-import '../../../global_widgets/buttons/container/border_container.dart';
+import '../../../global_widgets/container/border_container.dart';
 import '../../../global_widgets/helper_widget/black_space.dart';
 
 class CourseVideoContainer extends StatelessWidget {

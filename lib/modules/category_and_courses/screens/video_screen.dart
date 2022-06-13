@@ -5,11 +5,12 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smartgk/constants/assets_constants.dart';
-import 'package:smartgk/global_widgets/buttons/container/border_container.dart';
 import 'package:smartgk/global_widgets/buttons/primary_button.dart';
 import 'package:smartgk/global_widgets/helper_widget/black_space.dart';
 import 'package:smartgk/global_widgets/scaffold/primary_scaffold.dart';
 import 'package:smartgk/modules/category_and_courses/widgets/course_video_container.dart';
+
+import '../../../global_widgets/container/border_container.dart';
 
 class VideoScreen extends StatelessWidget {
   const VideoScreen({Key? key}) : super(key: key);

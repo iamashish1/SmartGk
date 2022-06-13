@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BorderContainer extends StatelessWidget {
   final BorderRadiusGeometry? borderRadius;
@@ -27,7 +26,8 @@ class BorderContainer extends StatelessWidget {
       alignment: Alignment.topCenter,
       child: Container(
         margin: margin ?? const EdgeInsets.symmetric(horizontal: 20),
-        padding: padding ?? EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+        padding:
+            padding ?? const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
         height: height,
         width: width,
         decoration: BoxDecoration(
