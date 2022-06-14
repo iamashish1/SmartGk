@@ -195,7 +195,8 @@ class CategoryScreen extends StatelessWidget {
                     return const CourseContainer();
                   },
                   separatorBuilder: (co, i) => VerticalSpace(10.h),
-                  itemCount: 4)
+                  itemCount: 4),
+              VerticalSpace(20.h),
             ],
           ),
         ),

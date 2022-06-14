@@ -7,9 +7,14 @@ import 'package:smartgk/constants/assets_constants.dart';
 class PrimaryScaffold extends StatelessWidget {
   final String? appBarTitle;
   final Widget? child;
+  final bool? hasLeading;
   final Widget? appbarChild;
   const PrimaryScaffold(
-      {this.child, Key? key, this.appbarChild, this.appBarTitle})
+      {this.child,
+      Key? key,
+      this.appbarChild,
+      this.appBarTitle,
+      this.hasLeading})
       : super(key: key);
 
   @override
@@ -29,9 +34,13 @@ class PrimaryScaffold extends StatelessWidget {
               child: appbarChild ??
                   Row(
                     children: [
-                      InkWell(
-                          onTap: () => Navigator.pop(context),
-                          child: SvgPicture.asset(AssetsConstants.backIconSvg)),
+                      Visibility(
+                        visible: hasLeading == null || hasLeading == true,
+                        child: InkWell(
+                            onTap: () => Navigator.pop(context),
+                            child:
+                                SvgPicture.asset(AssetsConstants.backIconSvg)),
+                      ),
                       const Spacer(),
                       Text(
                         appBarTitle ?? '',

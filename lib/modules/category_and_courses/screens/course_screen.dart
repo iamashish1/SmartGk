@@ -47,33 +47,70 @@ class CourseScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               VerticalSpace(20.h),
-              Text(
-                "Bibendum sit rutrum felis ac ut massa.",
-                style: theme.textTheme.headline2?.copyWith(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                ),
+                child: Text(
+                  "Bibendum sit rutrum felis ac ut massa.",
+                  style: theme.textTheme.headline2?.copyWith(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
               VerticalSpace(10.h),
-              Text(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris leo pellentesque sed elit ridiculus felis condimentum sed sit. Vel pellentesque sit mauris libero. Nunc amet adipiscing eu mauris luctus id feugiat placerat. Nunc nec, tempor at mauris, pharetra quis scelerisque eros, in. Tortor platea sed semper viverra auctor",
-                style: theme.textTheme.bodyText2?.copyWith(
-                  fontSize: 14,
-                  color: Color(0xff676767),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                ),
+                child: Text(
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris leo pellentesque sed elit ridiculus felis condimentum sed sit. Vel pellentesque sit mauris libero. Nunc amet adipiscing eu mauris luctus id feugiat placerat. Nunc nec, tempor at mauris, pharetra quis scelerisque eros, in. Tortor platea sed semper viverra auctor",
+                  style: theme.textTheme.bodyText2?.copyWith(
+                    fontSize: 14,
+                    color: Color(0xff676767),
+                  ),
                 ),
               ),
-              Row(
-                children: [ 
-                  Text('Created on:',
-                      style: theme.textTheme.bodyText1
-                          ?.copyWith(fontWeight: FontWeight.w600)),
-                  Text('20 january 2021', style: theme.textTheme.bodyText1),
-                ],
+              VerticalSpace(10.h),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                ),
+                child: Row(
+                  children: [
+                    Text('Created on:',
+                        style: theme.textTheme.bodyText1
+                            ?.copyWith(fontWeight: FontWeight.w600)),
+                    Text('20 january 2021', style: theme.textTheme.bodyText1),
+                  ],
+                ),
               ),
-              Row(
-                children: [Text('Rating:'), Text('4.7'), Icon(Icons.star)],
+              VerticalSpace(10.h),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                ),
+                child: Row(
+                  children: [
+                    Text('Rating:',
+                        style: theme.textTheme.bodyText1
+                            ?.copyWith(fontWeight: FontWeight.w600)),
+                    Text('4.7', style: theme.textTheme.bodyText1),
+                    Icon(Icons.star)
+                  ],
+                ),
               ),
-              Text('Teacher:'),
+              VerticalSpace(10.h),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                ),
+                child: Text('Teacher:',
+                    style: theme.textTheme.bodyText1
+                        ?.copyWith(fontWeight: FontWeight.w600)),
+              ),
+              VerticalSpace(10.h),
               Align(
                 alignment: Alignment.topCenter,
                 child: Container(
@@ -99,19 +136,32 @@ class CourseScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              Text('Teacher Name'),
+                              Text('Teacher Name',
+                                  style: theme.textTheme.bodyText1
+                                      ?.copyWith(fontWeight: FontWeight.w600)),
                               VerticalSpace(7.h),
-                              Text('2 Courses'),
+                              Text('2 Courses',
+                                  style: theme.textTheme.bodyText1),
                             ],
                           )
                         ],
                       ),
                     )),
               ),
-              const Text(
-                'Rs, 5,000',
-                textAlign: TextAlign.center,
+              VerticalSpace(15.h),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                ),
+                child: Text(
+                  'Rs, 5,000',
+                  style: theme.textTheme.headline2?.copyWith(
+                      color: theme.colorScheme.primary,
+                      fontWeight: FontWeight.w600),
+                  textAlign: TextAlign.center,
+                ),
               ),
+              VerticalSpace(15.h),
               PrimaryButton(
                 label: 'Buy Now',
                 height: 40.h,
@@ -120,77 +170,168 @@ class CourseScreen extends StatelessWidget {
                   PrimaryBottomSheet.showModal(
                     height: 340.h,
                     context: context,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Buy Course'),
-                        Text('Lispum Ipsum Jismik Histeh Liosht'),
-                        Text('Rs 5,000'),
-                        Divider(
-                          endIndent: 8,
-                          indent: 8,
-                          color: theme.colorScheme.primary,
-                          height: 1,
-                        ),
-                        BorderContainer(
-                          height: 50.h,
-                          width: 310.w,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text('Pay Via'),
-                              SvgPicture.asset(AssetsConstants.eSewaSvg),
-                            ],
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Buy Course',
+                              style: theme.textTheme.button?.copyWith(
+                                  color: Colors.black,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w600)),
+                          VerticalSpace(15.h),
+                          Text(
+                            'Lispum Ipsum Jismik Histeh Liosht',
+                            style: theme.textTheme.bodyText1,
                           ),
-                        ),
-                        BorderContainer(
-                          height: 50.h,
-                          width: 310.w,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text('Pay Via'),
-                              SvgPicture.asset(AssetsConstants.connectIpsSvg),
-                            ],
+                          VerticalSpace(15.h),
+                          Text('Rs 5,000',
+                              style: theme.textTheme.headline2?.copyWith(
+                                  color: theme.colorScheme.primary,
+                                  fontWeight: FontWeight.w600)),
+                          VerticalSpace(10.h),
+                          Divider(
+                            endIndent: 8,
+                            indent: 8,
+                            color: theme.colorScheme.primary,
+                            height: 20,
                           ),
-                        )
-                      ],
+                          BorderContainer(
+                            height: 50.h,
+                            width: 310.w,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text('Pay Via',
+                                    style: theme.textTheme.bodyText1?.copyWith(
+                                        fontWeight: FontWeight.w600)),
+                                HorizSpace(10.w),
+                                Image.asset(AssetsConstants.eSewaPng),
+                              ],
+                            ),
+                          ),
+                          VerticalSpace(10.h),
+                          BorderContainer(
+                            height: 50.h,
+                            width: 310.w,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text('Pay Via',
+                                    style: theme.textTheme.bodyText1?.copyWith(
+                                        fontWeight: FontWeight.w600)),
+                                HorizSpace(10.w),
+                                Image.asset(AssetsConstants.connectIpPng),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   );
                 },
               ),
-              const Text('What will you learn?'),
-              Row(
-                children: const [
-                  Icon(Icons.star),
-                  Text("Risus quam massa pharetra nulla erat bibendum."),
-                ],
+              VerticalSpace(15.h),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                ),
+                child: Text('What will you learn?',
+                    style: theme.textTheme.button?.copyWith(
+                        color: Colors.black, fontWeight: FontWeight.w600)),
               ),
-              Row(
-                children: const [
-                  Icon(Icons.star),
-                  Text("Risus quam massa pharetra nulla erat bibendum."),
-                ],
+              VerticalSpace(15.h),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(Icons.star),
+                        HorizSpace(10.w),
+                        Expanded(
+                          child: Text(
+                              "Risus quam massa pharetra nulla erat bibendum.",
+                              style: theme.textTheme.bodyText2?.copyWith(
+                                fontSize: 14,
+                              )),
+                        ),
+                      ],
+                    ),
+                    VerticalSpace(20.h),
+                    Row(
+                      children: [
+                        Icon(Icons.star),
+                        HorizSpace(10.w),
+                        Expanded(
+                          child: Text(
+                              "Risus quam massa pharetra nulla erat bibendum.",
+                              style: theme.textTheme.bodyText2?.copyWith(
+                                fontSize: 14,
+                              )),
+                        ),
+                      ],
+                    ),
+                    VerticalSpace(20.h),
+                    Row(
+                      children: [
+                        Icon(Icons.star),
+                        HorizSpace(10.w),
+                        Expanded(
+                          child: Text(
+                              "Risus quam massa pharetra nulla erat bibendum.",
+                              style: theme.textTheme.bodyText2?.copyWith(
+                                fontSize: 14,
+                              )),
+                        ),
+                      ],
+                    ),
+                    VerticalSpace(20.h),
+                    Row(
+                      children: [
+                        Icon(Icons.star),
+                        HorizSpace(10.w),
+                        Expanded(
+                          child: Text(
+                              "Risus quam massa pharetra nulla erat bibendum.",
+                              style: theme.textTheme.bodyText2?.copyWith(
+                                fontSize: 14,
+                              )),
+                        ),
+                      ],
+                    ),
+                    VerticalSpace(20.h),
+                    Row(
+                      children: [
+                        Icon(Icons.star),
+                        HorizSpace(10.w),
+                        Expanded(
+                          child: Text(
+                              "Risus quam massa pharetra nulla erat bibendum.",
+                              style: theme.textTheme.bodyText2?.copyWith(
+                                fontSize: 14,
+                              )),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-              Row(
-                children: const [
-                  Icon(Icons.star),
-                  Text("Risus quam massa pharetra nulla erat bibendum."),
-                ],
+              VerticalSpace(15.h),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                ),
+                child: Text('What does this course contain?',
+                    style: theme.textTheme.button?.copyWith(
+                        color: Colors.black, fontWeight: FontWeight.w600)),
               ),
-              Row(
-                children: const [
-                  Icon(Icons.star),
-                  Text("Risus quam massa pharetra nulla erat bibendum."),
-                ],
-              ),
-              Row(
-                children: const [
-                  Icon(Icons.star),
-                  Text("Risus quam massa pharetra nulla erat bibendum."),
-                ],
-              ),
-              const Text('What does this course contain?'),
+              VerticalSpace(15.h),
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 20.0,
@@ -202,7 +343,7 @@ class CourseScreen extends StatelessWidget {
                     children: [
                       CourseContentContainer(
                         onPress: () => context.router.push(
-                          LiveClass(),
+                          const LiveClass(),
                         ),
                         desc: "Live Class with instructors",
                         icon: Icons.video_call,
@@ -236,7 +377,7 @@ class CourseScreen extends StatelessWidget {
                         height: 127.h,
                         width: 296.w,
                         onPress: () => context.router.push(
-                          ForumsScreen(),
+                          const ForumsScreen(),
                         ),
                         desc: "Live Class with instructors",
                         icon: Icons.video_call,
@@ -244,16 +385,23 @@ class CourseScreen extends StatelessWidget {
                       ),
                     ]),
               ),
-              const Text('Rate the course'),
+              VerticalSpace(20.h),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                ),
+                child: Text('Rate the course',
+                    style: theme.textTheme.button?.copyWith(
+                        color: Colors.black, fontWeight: FontWeight.w600)),
+              ),
+              VerticalSpace(15.h),
               BorderContainer(
-                height: 178.h,
-                width: 330.w,
                 child: Column(
                   children: [
                     RatingBar.builder(
                       glow: false,
-                      initialRating: 0,
-                      unratedColor: theme.colorScheme.primary,
+                      initialRating: 1,
+                      unratedColor: Colors.grey,
                       minRating: 0,
                       direction: Axis.horizontal,
                       itemCount: 5,
@@ -261,11 +409,12 @@ class CourseScreen extends StatelessWidget {
                         horizontal: 4.0,
                       ),
                       itemBuilder: (context, _) => Icon(
-                        Icons.star_border_outlined,
+                        Icons.star,
                         color: theme.colorScheme.primary,
                       ),
                       onRatingUpdate: (rating) {},
                     ),
+                    VerticalSpace(10.h),
                     Align(
                       alignment: Alignment.center,
                       child: BorderContainer(
@@ -283,6 +432,7 @@ class CourseScreen extends StatelessWidget {
                         ),
                       ),
                     ),
+                    VerticalSpace(20.h),
                   ],
                 ),
               ),
@@ -290,10 +440,13 @@ class CourseScreen extends StatelessWidget {
                 onTap: (() => context.router.push(BooksListScreen())),
                 child: Padding(
                   padding: const EdgeInsets.all(20.0),
-                  child: const Text('Course Review'),
+                  child: Text('Course Review',
+                      style: theme.textTheme.button?.copyWith(
+                          color: Colors.black, fontWeight: FontWeight.w600)),
                 ),
               ),
               Container(
+                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                 margin: defaultPadding,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
@@ -304,6 +457,7 @@ class CourseScreen extends StatelessWidget {
                   shrinkWrap: true,
                   itemBuilder: (ctx, index) {
                     return Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CircleAvatar(
                           radius: 27.h,
@@ -314,16 +468,27 @@ class CourseScreen extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('Lorem Ipsum Name'),
-                              Row(
-                                children: [
-                                  ...['', '', '', '', '']
-                                      .map((e) => Icon(Icons.star))
-                                      .toList(),
-                                ],
+                              Text('Lorem Ipsum Name',
+                                  style: theme.textTheme.button?.copyWith(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w600)),
+                              VerticalSpace(5.h),
+                              RatingBarIndicator(
+                                itemSize: 22,
+                                itemCount: 5,
+                                rating: 4,
+                                itemBuilder: (BuildContext context, int index) {
+                                  return Icon(
+                                    Icons.star_border_outlined,
+                                    color: theme.colorScheme.primary,
+                                  );
+                                },
                               ),
-                              const Text(
+                              VerticalSpace(5.h),
+                              Text(
                                 "Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Ferme ntum at odio aliquet ante convallis amet convallis. Nunc nibh sed orci viverra platea. Auctor pellentesque amet.",
+                                style: theme.textTheme.bodyText1
+                                    ?.copyWith(fontWeight: FontWeight.w400),
                               ),
                             ],
                           ),
@@ -334,13 +499,14 @@ class CourseScreen extends StatelessWidget {
                   separatorBuilder: (context, index) => Divider(
                     indent: 8,
                     endIndent: 8,
-                    height: 10,
+                    height: 20,
                     thickness: 1,
                     color: theme.colorScheme.primary,
                   ),
                   itemCount: 3,
                 ),
               ),
+              VerticalSpace(40.h),
             ],
           ),
         ),

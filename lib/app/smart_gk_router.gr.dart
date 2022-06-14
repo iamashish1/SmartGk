@@ -10,9 +10,8 @@
 //
 // ignore_for_file: type=lint
 
-import 'package:auto_route/auto_route.dart' as _i23;
-import 'package:flutter/material.dart' as _i24;
-import 'package:flutter/src/widgets/framework.dart' as _i25;
+import 'package:auto_route/auto_route.dart' as _i24;
+import 'package:flutter/material.dart' as _i25;
 
 import '../modules/auth/screens/login_screen.dart' as _i2;
 import '../modules/auth/screens/sign_up_screen.dart' as _i3;
@@ -35,6 +34,8 @@ import '../modules/category_and_courses/screens/forums/forums_screen.dart'
     as _i15;
 import '../modules/category_and_courses/screens/live_class.dart' as _i8;
 import '../modules/category_and_courses/screens/notes_screen.dart' as _i9;
+import '../modules/category_and_courses/screens/video_calling_screen.dart'
+    as _i23;
 import '../modules/category_and_courses/screens/video_playing_screen.dart'
     as _i11;
 import '../modules/category_and_courses/screens/video_screen.dart' as _i10;
@@ -44,140 +45,145 @@ import '../modules/profile/screens/profile_screen.dart' as _i19;
 import '../modules/profile/screens/purchased_course_screen.dart' as _i20;
 import '../modules/profile/screens/settings_screen.dart' as _i21;
 
-class SmartGKRouter extends _i23.RootStackRouter {
-  SmartGKRouter([_i24.GlobalKey<_i24.NavigatorState>? navigatorKey])
+class SmartGKRouter extends _i24.RootStackRouter {
+  SmartGKRouter([_i25.GlobalKey<_i25.NavigatorState>? navigatorKey])
       : super(navigatorKey);
 
   @override
-  final Map<String, _i23.PageFactory> pagesMap = {
+  final Map<String, _i24.PageFactory> pagesMap = {
     HomeScreen.name: (routeData) {
-      return _i23.MaterialPageX<dynamic>(
+      return _i24.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i1.HomeScreen());
     },
     LoginScreen.name: (routeData) {
-      return _i23.MaterialPageX<dynamic>(
+      return _i24.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i2.LoginScreen());
     },
     SignUpScreen.name: (routeData) {
-      return _i23.MaterialPageX<dynamic>(
+      return _i24.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i3.SignUpScreen());
     },
     NotificationScreen.name: (routeData) {
-      return _i23.MaterialPageX<dynamic>(
+      return _i24.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i4.NotificationScreen());
     },
     CategoryListScreen.name: (routeData) {
-      return _i23.MaterialPageX<dynamic>(
+      return _i24.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i5.CategoryListScreen());
     },
     CategoryScreen.name: (routeData) {
-      return _i23.MaterialPageX<dynamic>(
+      return _i24.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i6.CategoryScreen());
     },
     CourseScreen.name: (routeData) {
-      return _i23.MaterialPageX<dynamic>(
+      return _i24.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i7.CourseScreen());
     },
     LiveClass.name: (routeData) {
-      return _i23.MaterialPageX<dynamic>(
+      return _i24.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i8.LiveClass());
     },
     NotesScreen.name: (routeData) {
-      return _i23.MaterialPageX<dynamic>(
+      return _i24.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i9.NotesScreen());
     },
     VideoScreen.name: (routeData) {
-      return _i23.MaterialPageX<dynamic>(
+      return _i24.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i10.VideoScreen());
     },
     VideoPlayingScreen.name: (routeData) {
-      return _i23.MaterialPageX<dynamic>(
+      return _i24.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i11.VideoPlayingScreen());
     },
     ExamScreen.name: (routeData) {
-      return _i23.MaterialPageX<dynamic>(
+      return _i24.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i12.ExamScreen());
     },
     ExamInstructionScreen.name: (routeData) {
-      return _i23.MaterialPageX<dynamic>(
+      return _i24.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i13.ExamInstructionScreen());
     },
     StartTest.name: (routeData) {
       final args =
           routeData.argsAs<StartTestArgs>(orElse: () => const StartTestArgs());
-      return _i23.MaterialPageX<dynamic>(
+      return _i24.MaterialPageX<dynamic>(
           routeData: routeData,
           child: _i14.StartTest(key: args.key, color: args.color));
     },
     ForumsScreen.name: (routeData) {
-      return _i23.MaterialPageX<dynamic>(
+      return _i24.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i15.ForumsScreen());
     },
     BooksListScreen.name: (routeData) {
-      return _i23.MaterialPageX<dynamic>(
+      return _i24.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i16.BooksListScreen());
     },
     BookDetailScreen.name: (routeData) {
-      return _i23.MaterialPageX<dynamic>(
+      return _i24.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i17.BookDetailScreen());
     },
     DeliveryInfoScreen.name: (routeData) {
-      return _i23.MaterialPageX<dynamic>(
+      return _i24.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i18.DeliveryInfoScreen());
     },
     ProfileScreen.name: (routeData) {
-      return _i23.MaterialPageX<dynamic>(
+      return _i24.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i19.ProfileScreen());
     },
     PurchasedCourseScreen.name: (routeData) {
-      return _i23.MaterialPageX<dynamic>(
+      return _i24.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i20.PurchasedCourseScreen());
     },
     SettingsScreen.name: (routeData) {
-      return _i23.MaterialPageX<dynamic>(
+      return _i24.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i21.SettingsScreen());
     },
     BottomNav.name: (routeData) {
-      return _i23.MaterialPageX<dynamic>(
+      return _i24.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i22.BottomNav());
+    },
+    VideoCallingScreen.name: (routeData) {
+      return _i24.MaterialPageX<dynamic>(
+          routeData: routeData, child: const _i23.VideoCallingScreen());
     }
   };
 
   @override
-  List<_i23.RouteConfig> get routes => [
-        _i23.RouteConfig(HomeScreen.name, path: 'home'),
-        _i23.RouteConfig(LoginScreen.name, path: '/'),
-        _i23.RouteConfig(SignUpScreen.name, path: '/sign-up-screen'),
-        _i23.RouteConfig(NotificationScreen.name, path: '/notification-screen'),
-        _i23.RouteConfig(CategoryListScreen.name,
+  List<_i24.RouteConfig> get routes => [
+        _i24.RouteConfig(HomeScreen.name, path: 'home'),
+        _i24.RouteConfig(LoginScreen.name, path: '/'),
+        _i24.RouteConfig(SignUpScreen.name, path: '/sign-up-screen'),
+        _i24.RouteConfig(NotificationScreen.name, path: '/notification-screen'),
+        _i24.RouteConfig(CategoryListScreen.name,
             path: '/category-list-screen'),
-        _i23.RouteConfig(CategoryScreen.name, path: '/category-screen'),
-        _i23.RouteConfig(CourseScreen.name, path: '/course-screen'),
-        _i23.RouteConfig(LiveClass.name, path: '/live-class'),
-        _i23.RouteConfig(NotesScreen.name, path: '/notes-screen'),
-        _i23.RouteConfig(VideoScreen.name, path: '/video-screen'),
-        _i23.RouteConfig(VideoPlayingScreen.name,
+        _i24.RouteConfig(CategoryScreen.name, path: '/category-screen'),
+        _i24.RouteConfig(CourseScreen.name, path: '/course-screen'),
+        _i24.RouteConfig(LiveClass.name, path: '/live-class'),
+        _i24.RouteConfig(NotesScreen.name, path: '/notes-screen'),
+        _i24.RouteConfig(VideoScreen.name, path: '/video-screen'),
+        _i24.RouteConfig(VideoPlayingScreen.name,
             path: '/video-playing-screen'),
-        _i23.RouteConfig(ExamScreen.name, path: '/exam-screen'),
-        _i23.RouteConfig(ExamInstructionScreen.name,
+        _i24.RouteConfig(ExamScreen.name, path: '/exam-screen'),
+        _i24.RouteConfig(ExamInstructionScreen.name,
             path: '/exam-instruction-screen'),
-        _i23.RouteConfig(StartTest.name, path: '/start-test'),
-        _i23.RouteConfig(ForumsScreen.name, path: '/forums-screen'),
-        _i23.RouteConfig(BooksListScreen.name, path: '/books-list-screen'),
-        _i23.RouteConfig(BookDetailScreen.name, path: '/book-detail-screen'),
-        _i23.RouteConfig(DeliveryInfoScreen.name,
+        _i24.RouteConfig(StartTest.name, path: '/start-test'),
+        _i24.RouteConfig(ForumsScreen.name, path: '/forums-screen'),
+        _i24.RouteConfig(BooksListScreen.name, path: '/books-list-screen'),
+        _i24.RouteConfig(BookDetailScreen.name, path: '/book-detail-screen'),
+        _i24.RouteConfig(DeliveryInfoScreen.name,
             path: '/delivery-info-screen'),
-        _i23.RouteConfig(ProfileScreen.name, path: '/profile-screen'),
-        _i23.RouteConfig(PurchasedCourseScreen.name,
+        _i24.RouteConfig(ProfileScreen.name, path: '/profile-screen'),
+        _i24.RouteConfig(PurchasedCourseScreen.name,
             path: '/purchased-course-screen'),
-        _i23.RouteConfig(SettingsScreen.name, path: '/settings-screen'),
-        _i23.RouteConfig(BottomNav.name, path: '/bottom-nav')
+        _i24.RouteConfig(SettingsScreen.name, path: '/settings-screen'),
+        _i24.RouteConfig(BottomNav.name, path: '/bottom-nav'),
+        _i24.RouteConfig(VideoCallingScreen.name, path: '/video-calling-screen')
       ];
 }
 
 /// generated route for
 /// [_i1.HomeScreen]
-class HomeScreen extends _i23.PageRouteInfo<void> {
+class HomeScreen extends _i24.PageRouteInfo<void> {
   const HomeScreen() : super(HomeScreen.name, path: 'home');
 
   static const String name = 'HomeScreen';
@@ -185,7 +191,7 @@ class HomeScreen extends _i23.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i2.LoginScreen]
-class LoginScreen extends _i23.PageRouteInfo<void> {
+class LoginScreen extends _i24.PageRouteInfo<void> {
   const LoginScreen() : super(LoginScreen.name, path: '/');
 
   static const String name = 'LoginScreen';
@@ -193,7 +199,7 @@ class LoginScreen extends _i23.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i3.SignUpScreen]
-class SignUpScreen extends _i23.PageRouteInfo<void> {
+class SignUpScreen extends _i24.PageRouteInfo<void> {
   const SignUpScreen() : super(SignUpScreen.name, path: '/sign-up-screen');
 
   static const String name = 'SignUpScreen';
@@ -201,7 +207,7 @@ class SignUpScreen extends _i23.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i4.NotificationScreen]
-class NotificationScreen extends _i23.PageRouteInfo<void> {
+class NotificationScreen extends _i24.PageRouteInfo<void> {
   const NotificationScreen()
       : super(NotificationScreen.name, path: '/notification-screen');
 
@@ -210,7 +216,7 @@ class NotificationScreen extends _i23.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i5.CategoryListScreen]
-class CategoryListScreen extends _i23.PageRouteInfo<void> {
+class CategoryListScreen extends _i24.PageRouteInfo<void> {
   const CategoryListScreen()
       : super(CategoryListScreen.name, path: '/category-list-screen');
 
@@ -219,7 +225,7 @@ class CategoryListScreen extends _i23.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i6.CategoryScreen]
-class CategoryScreen extends _i23.PageRouteInfo<void> {
+class CategoryScreen extends _i24.PageRouteInfo<void> {
   const CategoryScreen() : super(CategoryScreen.name, path: '/category-screen');
 
   static const String name = 'CategoryScreen';
@@ -227,7 +233,7 @@ class CategoryScreen extends _i23.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i7.CourseScreen]
-class CourseScreen extends _i23.PageRouteInfo<void> {
+class CourseScreen extends _i24.PageRouteInfo<void> {
   const CourseScreen() : super(CourseScreen.name, path: '/course-screen');
 
   static const String name = 'CourseScreen';
@@ -235,7 +241,7 @@ class CourseScreen extends _i23.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i8.LiveClass]
-class LiveClass extends _i23.PageRouteInfo<void> {
+class LiveClass extends _i24.PageRouteInfo<void> {
   const LiveClass() : super(LiveClass.name, path: '/live-class');
 
   static const String name = 'LiveClass';
@@ -243,7 +249,7 @@ class LiveClass extends _i23.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i9.NotesScreen]
-class NotesScreen extends _i23.PageRouteInfo<void> {
+class NotesScreen extends _i24.PageRouteInfo<void> {
   const NotesScreen() : super(NotesScreen.name, path: '/notes-screen');
 
   static const String name = 'NotesScreen';
@@ -251,7 +257,7 @@ class NotesScreen extends _i23.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i10.VideoScreen]
-class VideoScreen extends _i23.PageRouteInfo<void> {
+class VideoScreen extends _i24.PageRouteInfo<void> {
   const VideoScreen() : super(VideoScreen.name, path: '/video-screen');
 
   static const String name = 'VideoScreen';
@@ -259,7 +265,7 @@ class VideoScreen extends _i23.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i11.VideoPlayingScreen]
-class VideoPlayingScreen extends _i23.PageRouteInfo<void> {
+class VideoPlayingScreen extends _i24.PageRouteInfo<void> {
   const VideoPlayingScreen()
       : super(VideoPlayingScreen.name, path: '/video-playing-screen');
 
@@ -268,7 +274,7 @@ class VideoPlayingScreen extends _i23.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i12.ExamScreen]
-class ExamScreen extends _i23.PageRouteInfo<void> {
+class ExamScreen extends _i24.PageRouteInfo<void> {
   const ExamScreen() : super(ExamScreen.name, path: '/exam-screen');
 
   static const String name = 'ExamScreen';
@@ -276,7 +282,7 @@ class ExamScreen extends _i23.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i13.ExamInstructionScreen]
-class ExamInstructionScreen extends _i23.PageRouteInfo<void> {
+class ExamInstructionScreen extends _i24.PageRouteInfo<void> {
   const ExamInstructionScreen()
       : super(ExamInstructionScreen.name, path: '/exam-instruction-screen');
 
@@ -285,8 +291,8 @@ class ExamInstructionScreen extends _i23.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i14.StartTest]
-class StartTest extends _i23.PageRouteInfo<StartTestArgs> {
-  StartTest({_i25.Key? key, _i24.Color? color})
+class StartTest extends _i24.PageRouteInfo<StartTestArgs> {
+  StartTest({_i25.Key? key, _i25.Color? color})
       : super(StartTest.name,
             path: '/start-test', args: StartTestArgs(key: key, color: color));
 
@@ -298,7 +304,7 @@ class StartTestArgs {
 
   final _i25.Key? key;
 
-  final _i24.Color? color;
+  final _i25.Color? color;
 
   @override
   String toString() {
@@ -308,7 +314,7 @@ class StartTestArgs {
 
 /// generated route for
 /// [_i15.ForumsScreen]
-class ForumsScreen extends _i23.PageRouteInfo<void> {
+class ForumsScreen extends _i24.PageRouteInfo<void> {
   const ForumsScreen() : super(ForumsScreen.name, path: '/forums-screen');
 
   static const String name = 'ForumsScreen';
@@ -316,7 +322,7 @@ class ForumsScreen extends _i23.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i16.BooksListScreen]
-class BooksListScreen extends _i23.PageRouteInfo<void> {
+class BooksListScreen extends _i24.PageRouteInfo<void> {
   const BooksListScreen()
       : super(BooksListScreen.name, path: '/books-list-screen');
 
@@ -325,7 +331,7 @@ class BooksListScreen extends _i23.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i17.BookDetailScreen]
-class BookDetailScreen extends _i23.PageRouteInfo<void> {
+class BookDetailScreen extends _i24.PageRouteInfo<void> {
   const BookDetailScreen()
       : super(BookDetailScreen.name, path: '/book-detail-screen');
 
@@ -334,7 +340,7 @@ class BookDetailScreen extends _i23.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i18.DeliveryInfoScreen]
-class DeliveryInfoScreen extends _i23.PageRouteInfo<void> {
+class DeliveryInfoScreen extends _i24.PageRouteInfo<void> {
   const DeliveryInfoScreen()
       : super(DeliveryInfoScreen.name, path: '/delivery-info-screen');
 
@@ -343,7 +349,7 @@ class DeliveryInfoScreen extends _i23.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i19.ProfileScreen]
-class ProfileScreen extends _i23.PageRouteInfo<void> {
+class ProfileScreen extends _i24.PageRouteInfo<void> {
   const ProfileScreen() : super(ProfileScreen.name, path: '/profile-screen');
 
   static const String name = 'ProfileScreen';
@@ -351,7 +357,7 @@ class ProfileScreen extends _i23.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i20.PurchasedCourseScreen]
-class PurchasedCourseScreen extends _i23.PageRouteInfo<void> {
+class PurchasedCourseScreen extends _i24.PageRouteInfo<void> {
   const PurchasedCourseScreen()
       : super(PurchasedCourseScreen.name, path: '/purchased-course-screen');
 
@@ -360,7 +366,7 @@ class PurchasedCourseScreen extends _i23.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i21.SettingsScreen]
-class SettingsScreen extends _i23.PageRouteInfo<void> {
+class SettingsScreen extends _i24.PageRouteInfo<void> {
   const SettingsScreen() : super(SettingsScreen.name, path: '/settings-screen');
 
   static const String name = 'SettingsScreen';
@@ -368,8 +374,17 @@ class SettingsScreen extends _i23.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i22.BottomNav]
-class BottomNav extends _i23.PageRouteInfo<void> {
+class BottomNav extends _i24.PageRouteInfo<void> {
   const BottomNav() : super(BottomNav.name, path: '/bottom-nav');
 
   static const String name = 'BottomNav';
+}
+
+/// generated route for
+/// [_i23.VideoCallingScreen]
+class VideoCallingScreen extends _i24.PageRouteInfo<void> {
+  const VideoCallingScreen()
+      : super(VideoCallingScreen.name, path: '/video-calling-screen');
+
+  static const String name = 'VideoCallingScreen';
 }

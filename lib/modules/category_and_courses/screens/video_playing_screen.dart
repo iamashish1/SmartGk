@@ -67,17 +67,16 @@ class _VideoPlayingScreenState extends State<VideoPlayingScreen> {
           VerticalSpace(10.h),
           Expanded(
             child: ListView.separated(
+              padding: EdgeInsets.zero,
               primary: false,
-              itemBuilder: (context, index) => CourseVideoContainer(
-                height: 92.h,
-                width: 351.w,
-              ),
+              itemBuilder: (context, index) =>
+                  index == 6 ? VerticalSpace(20.h) : CourseVideoContainer(),
               separatorBuilder: (context, index) {
                 return VerticalSpace(10.h);
               },
               itemCount: 7,
             ),
-          )
+          ),
         ],
       ),
     );

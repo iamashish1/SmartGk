@@ -42,7 +42,7 @@ class ExamInstructionScreen extends StatelessWidget {
                   SectionHeading(
                       horizPading: 0, title: 'Rules and Instruction:'),
                   VerticalSpace(10.h),
-                  ...['', '', '', '', '', '', '', '']
+                  ...['', '', '', '', '', '', '', '', '', '', '', '', '']
                       .map((e) => Column(
                             children: [
                               Row(
@@ -78,6 +78,7 @@ class ExamInstructionScreen extends StatelessWidget {
                 height: 41.h,
                 color: Color(0xffC4C4C4),
                 label: 'Take Exam'),
+            VerticalSpace(20.h),
           ]),
         ));
   }

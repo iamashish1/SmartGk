@@ -2,7 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
+import 'package:smartgk/constants/assets_constants.dart';
+import 'package:smartgk/modules/category_and_courses/screens/category_list_screen.dart';
 
 import '../../app/smart_gk_router.gr.dart' as ge;
 import '../category_and_courses/screens/books/books_list_screen.dart';
@@ -19,39 +23,31 @@ class BottomNav extends StatefulWidget {
 
 class _BottomNavState extends State<BottomNav> {
   List<Widget> list = [
-    HomeScreen(),
-    CourseScreen(),
-    BooksListScreen(),
-    ProfileScreen(),
+    const HomeScreen(),
+    const CategoryListScreen(),
+    const BooksListScreen(),
+    const ProfileScreen(),
   ];
 
   List<PersistentBottomNavBarItem> _navBarsItems() {
     return [
       PersistentBottomNavBarItem(
-        icon: Icon(CupertinoIcons.home),
-        opacity: 1,
-        title: ("Home"),
-        activeColorPrimary: Colors.green,
-        inactiveColorPrimary: Colors.black,
-      ),
-      PersistentBottomNavBarItem(
-        opacity: 1,
-        icon: Icon(CupertinoIcons.book),
-        title: ("Courses"),
+        icon: SvgPicture.asset(AssetsConstants.homeIcon),
         activeColorPrimary: Theme.of(context).colorScheme.primary,
         inactiveColorPrimary: Colors.black,
       ),
       PersistentBottomNavBarItem(
-        opacity: 1,
-        icon: Icon(Icons.book_online_outlined),
-        title: ("Books"),
+        icon: SvgPicture.asset(AssetsConstants.courseIcon),
         activeColorPrimary: Theme.of(context).colorScheme.primary,
         inactiveColorPrimary: Colors.black,
       ),
       PersistentBottomNavBarItem(
-        opacity: 1,
-        icon: Icon(Icons.person_outline),
-        title: ("Profile"),
+        icon: SvgPicture.asset(AssetsConstants.bookIcon),
+        activeColorPrimary: Theme.of(context).colorScheme.primary,
+        inactiveColorPrimary: Colors.black,
+      ),
+      PersistentBottomNavBarItem(
+        icon: SvgPicture.asset(AssetsConstants.profileIcon),
         activeColorPrimary: Theme.of(context).colorScheme.primary,
         inactiveColorPrimary: Colors.black,
       ),
@@ -86,6 +82,7 @@ class _BottomNavState extends State<BottomNav> {
         borderRadius: BorderRadius.circular(10.0),
         colorBehindNavBar: Colors.white,
       ),
+      navBarHeight: 74.h,
       popAllScreensOnTapOfSelectedTab: true,
       popActionScreens: PopActionScreensType.all,
       itemAnimationProperties: ItemAnimationProperties(
@@ -100,7 +97,7 @@ class _BottomNavState extends State<BottomNav> {
         duration: Duration(milliseconds: 200),
       ),
       navBarStyle:
-          NavBarStyle.style1, // Choose the nav bar style with this property.
+          NavBarStyle.style7, // Choose the nav bar style with this property.
     );
   }
 }

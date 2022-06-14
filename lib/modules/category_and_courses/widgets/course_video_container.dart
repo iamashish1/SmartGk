@@ -19,60 +19,61 @@ class CourseVideoContainer extends StatelessWidget {
     final theme = Theme.of(context);
     return BorderContainer(
       color: theme.colorScheme.primary.withOpacity(0.2),
-      height: height ?? 90.h,
-      width: width ?? 351.w,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 8),
-        child: Row(children: [
-          SizedBox(
-            height: 65.h,
-            width: 65.h,
-            child: Stack(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: Image(
-                    image: AssetImage(
-                      AssetsConstants.girl,
-                    ),
-                    height: 65.h,
-                    width: 65.h,
-                    fit: BoxFit.cover,
+      height: height,
+      width: width,
+      child: Row(children: [
+        SizedBox(
+          height: 65.h,
+          width: 65.h,
+          child: Stack(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image(
+                  image: AssetImage(
+                    AssetsConstants.girl,
                   ),
+                  height: 65.h,
+                  width: 65.h,
+                  fit: BoxFit.cover,
                 ),
-                Align(
-                  alignment: Alignment.center,
-                  child: SvgPicture.asset(
-                    AssetsConstants.videoPlayIconSvg,
-                  ),
-                )
-              ],
-            ),
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: SvgPicture.asset(
+                  AssetsConstants.videoPlayIconSvg,
+                ),
+              )
+            ],
           ),
-          HorizSpace(15.w),
-          Expanded(
-            child: Column(
-              children: [
-                Text(
-                  "1.Bibendum sit rutrum felis ac uta",
-                  style: theme.textTheme.bodyText1
-                      ?.copyWith(fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  "Lorem ipsum dolor sit amet, cons ectetur adipiscing.",
-                  style: theme.textTheme.bodyText2?.copyWith(fontSize: 12),
-                ),
-              ],
-            ),
+        ),
+        HorizSpace(15.w),
+        Expanded(
+          flex: 4,
+          child: Column(
+            children: [
+              Text(
+                "1.Bibendum sit rutrum felis ac uta",
+                style: theme.textTheme.bodyText1
+                    ?.copyWith(fontWeight: FontWeight.bold),
+              ),
+              Text(
+                "Lorem ipsum dolor sit amet, cons ectetur adipiscing.",
+                style: theme.textTheme.bodyText2?.copyWith(fontSize: 12),
+              ),
+            ],
           ),
-          HorizSpace(5.w),
-          Text(
+        ),
+        HorizSpace(10.w),
+        Expanded(
+          flex: 1,
+          child: Text(
             '10 mins',
             style: theme.textTheme.bodyText2?.copyWith(
                 fontSize: 12, fontWeight: FontWeight.bold, color: Colors.black),
-          )
-        ]),
-      ),
+          ),
+        )
+      ]),
     );
   }
 }

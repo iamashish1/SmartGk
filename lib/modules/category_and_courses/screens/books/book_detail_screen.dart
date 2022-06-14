@@ -90,7 +90,7 @@ class BookDetailScreen extends StatelessWidget {
                     style:
                         theme.textTheme.button?.copyWith(color: Colors.black),
                   ),
-                  SvgPicture.asset(AssetsConstants.eSewaSvg),
+                  Image.asset(AssetsConstants.eSewaPng),
                 ],
               ),
             ),
@@ -107,7 +107,7 @@ class BookDetailScreen extends StatelessWidget {
                   style: theme.textTheme.button?.copyWith(color: Colors.black),
                 ),
                 HorizSpace(23.w),
-                SvgPicture.asset(AssetsConstants.connectIpsSvg),
+                Image.asset(AssetsConstants.connectIpPng),
               ],
             ),
           ),

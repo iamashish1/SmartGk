@@ -36,8 +36,10 @@ class PrimaryTextField extends StatelessWidget {
             padding: padding ?? EdgeInsets.symmetric(horizontal: 50.w),
             child: Text(
               label ?? '',
-              style: labelStyle??theme.textTheme.bodyText1
-                  ?.copyWith(fontWeight: FontWeight.w500),
+              style: labelStyle ??
+                  theme.textTheme.bodyText1?.copyWith(
+                    fontWeight: FontWeight.w600,
+                  ),
             ),
           ),
         ),
@@ -64,6 +66,9 @@ class PrimaryTextField extends StatelessWidget {
               decoration: InputDecoration(
                 border: InputBorder.none,
                 hintText: hintText,
+                hintStyle: theme.textTheme.bodyText2?.copyWith(
+                  fontSize: 16,
+                ),
                 contentPadding: const EdgeInsets.symmetric(horizontal: 12),
               ),
             ),

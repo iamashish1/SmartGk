@@ -26,6 +26,10 @@ class CourseContentContainer extends StatelessWidget {
     return GestureDetector(
       onTap: onPress,
       child: Container(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 20,
+          vertical: 10,
+        ),
         alignment: Alignment.center,
         height: height ?? 138.h,
         width: width ?? 170.w,
@@ -54,6 +58,9 @@ class CourseContentContainer extends StatelessWidget {
             ),
             Text(
               desc,
+              style: theme.textTheme.bodyText2?.copyWith(
+                fontSize: 12,
+              ),
               textAlign: TextAlign.center,
             )
           ],

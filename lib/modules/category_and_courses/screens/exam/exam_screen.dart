@@ -69,7 +69,8 @@ class ExamScreen extends StatelessWidget {
                     )),
                 separatorBuilder: (ctx, ind) => VerticalSpace(10.h),
                 itemCount: 7,
-              )
+              ),
+              VerticalSpace(15.h),
             ],
           )),
     );

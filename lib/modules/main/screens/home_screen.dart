@@ -56,6 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(
               height: 238.h,
               child: ListView.separated(
+                physics: const BouncingScrollPhysics(),
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 scrollDirection: Axis.horizontal,
                 itemBuilder: ((context, index) => const CourseContainerWidget(
@@ -78,6 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(
               height: 238.h,
               child: ListView.separated(
+                physics: const BouncingScrollPhysics(),
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 scrollDirection: Axis.horizontal,
                 itemBuilder: ((context, index) => const CourseContainerWidget(
@@ -100,6 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(
               height: 238.h,
               child: ListView.separated(
+                physics: const BouncingScrollPhysics(),
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 scrollDirection: Axis.horizontal,
                 itemBuilder: ((context, index) => const CourseContainerWidget(
@@ -112,7 +115,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 separatorBuilder: (context, index) => HorizSpace(10.w),
                 itemCount: 3,
               ),
-            )
+            ),
+            VerticalSpace(40.h),
           ],
         ),
       ),

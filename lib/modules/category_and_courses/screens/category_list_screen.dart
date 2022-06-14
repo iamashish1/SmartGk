@@ -13,6 +13,7 @@ class CategoryListScreen extends StatelessWidget {
     final theme = Theme.of(context);
     return PrimaryScaffold(
       appBarTitle: 'Category',
+      hasLeading: false,
       child: SingleChildScrollView(
         child: Column(
           children: [

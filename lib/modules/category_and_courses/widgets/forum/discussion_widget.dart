@@ -44,7 +44,7 @@ class DiscussionWidget extends StatelessWidget {
           text: TextSpan(
             children: [
               TextSpan(
-                  text: 'Date:',
+                  text: 'Date: ',
                   style: theme.textTheme.bodyText2?.copyWith(fontSize: 14)),
               TextSpan(
                   text: '20/5/2022',

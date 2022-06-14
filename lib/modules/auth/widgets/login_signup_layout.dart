@@ -3,9 +3,11 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smartgk/modules/auth/widgets/auth_scaffold.dart';
 
 import '../../../app/smart_gk_router.gr.dart';
+import '../../../constants/assets_constants.dart';
 import '../../../global_widgets/buttons/primary_button.dart';
 import '../../../global_widgets/helper_widget/black_space.dart';
 import '../../../global_widgets/textfield/primary_text_field.dart';
@@ -168,17 +170,51 @@ class _LoginSignUpLayoutState extends State<LoginSignUpLayout> {
               VerticalSpace(15.h),
               //Social media login section
               GestureDetector(
-                onTap: (() => context.router.push(const CategoryListScreen())),
+                onTap: (() => context.router.push(
+                      const CategoryListScreen(),
+                    )),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    ...['', 'fb', 'google'].map((e) => Container(
-                          margin: const EdgeInsets.all(5),
-                          height: 51.h,
-                          width: 51.h,
-                          decoration: const BoxDecoration(
-                              color: Colors.white, shape: BoxShape.circle),
-                        ))
+                    //Apple Loogin
+                    Container(
+                      margin: const EdgeInsets.all(5),
+                      height: 51.h,
+                      width: 51.h,
+                      decoration: const BoxDecoration(
+                          color: Colors.white, shape: BoxShape.circle),
+                      child: Center(
+                        child: Image.asset(
+                          AssetsConstants.appleLogoPng,
+                        ),
+                      ),
+                    ),
+                    //Google Loogin
+                    Container(
+                      margin: const EdgeInsets.all(5),
+                      height: 51.h,
+                      width: 51.h,
+                      decoration: const BoxDecoration(
+                          color: Colors.white, shape: BoxShape.circle),
+                      child: Center(
+                        child: Image.asset(
+                          AssetsConstants.googleLogoPng,
+                        ),
+                      ),
+                    ),
+                    //FB Loogin
+                    Container(
+                      margin: const EdgeInsets.all(5),
+                      height: 51.h,
+                      width: 51.h,
+                      decoration: const BoxDecoration(
+                          color: Colors.white, shape: BoxShape.circle),
+                      child: Center(
+                        child: Image.asset(
+                          AssetsConstants.fbLogoPng,
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),

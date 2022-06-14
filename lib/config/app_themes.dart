@@ -61,7 +61,7 @@ class AppTheme {
 
   static const TextStyle _lightScreenHeading1TextStyle = TextStyle(
     fontSize: 28.0,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w500,
     color: _primaryBlack,
     fontFamily: "Montserrat",
   );

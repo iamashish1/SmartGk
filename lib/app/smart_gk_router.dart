@@ -6,6 +6,7 @@ import 'package:smartgk/modules/category_and_courses/screens/exam/exam_instructi
 import 'package:smartgk/modules/category_and_courses/screens/exam/start_test.dart';
 import 'package:smartgk/modules/category_and_courses/screens/live_class.dart';
 import 'package:smartgk/modules/category_and_courses/screens/notes_screen.dart';
+import 'package:smartgk/modules/category_and_courses/screens/video_calling_screen.dart';
 import 'package:smartgk/modules/category_and_courses/screens/video_screen.dart';
 import 'package:smartgk/modules/notification/screens/notification_screen.dart';
 import 'package:smartgk/modules/profile/screens/profile_screen.dart';
@@ -87,6 +88,9 @@ import '../modules/main/screens/home_screen.dart';
     ),
     AutoRoute(
       page: BottomNav,
+    ),
+    AutoRoute(
+      page: VideoCallingScreen,
     ),
   ],
 )

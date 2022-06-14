@@ -18,6 +18,8 @@ class BooksListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return PrimaryScaffold(
+      hasLeading: false,
+      appBarTitle: 'Books',
       child: Column(
         children: [
           VerticalSpace(10.h),
@@ -119,7 +121,7 @@ class BooksListScreen extends StatelessWidget {
                         indent: 0,
                         height: 30,
                       ),
-                  itemCount: 3),
+                  itemCount: 8),
             ),
           )
         ],

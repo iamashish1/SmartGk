@@ -88,7 +88,8 @@ class ForumsScreen extends StatelessWidget {
                   return const DiscussionWidget();
                 }),
                 separatorBuilder: (context, index) => VerticalSpace(10.h),
-                itemCount: 7)
+                itemCount: 7),
+            VerticalSpace(15.h),
           ],
         ),
       ),

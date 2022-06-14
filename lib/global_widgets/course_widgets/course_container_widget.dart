@@ -25,7 +25,8 @@ class CourseContainerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    return SizedBox(
+    return Container(
+      color: Colors.white,
       height: 232.h,
       width: 194.w,
       child: Stack(

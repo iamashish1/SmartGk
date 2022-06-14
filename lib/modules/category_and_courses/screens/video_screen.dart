@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
@@ -5,11 +6,13 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smartgk/constants/assets_constants.dart';
+import 'package:smartgk/constants/widget_constants.dart';
 import 'package:smartgk/global_widgets/buttons/primary_button.dart';
 import 'package:smartgk/global_widgets/helper_widget/black_space.dart';
 import 'package:smartgk/global_widgets/scaffold/primary_scaffold.dart';
 import 'package:smartgk/modules/category_and_courses/widgets/course_video_container.dart';
 
+import '../../../app/smart_gk_router.gr.dart';
 import '../../../global_widgets/container/border_container.dart';
 
 class VideoScreen extends StatelessWidget {
@@ -34,33 +37,42 @@ class VideoScreen extends StatelessWidget {
                   left: 0,
                   right: 0,
                   child: BorderContainer(
-                    padding: EdgeInsets.all(10),
-                    borderRadius: BorderRadius.only(
+                    padding: EdgeInsets.zero,
+                    margin: EdgeInsets.zero,
+                    borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(10),
                       bottomRight: Radius.circular(10),
                     ),
                     width: 350.w,
-                    height: 140.h,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'Bielbjsd Sit Huis Jiusd Uta Mussa.',
-                          style: theme.textTheme.button
-                              ?.copyWith(color: Colors.black),
+                        VerticalSpace(15.h),
+                        Padding(
+                          padding: defaultPadding,
+                          child: Text(
+                            'Bielbjsd Sit Huis Jiusd Uta Mussa.',
+                            style: theme.textTheme.button
+                                ?.copyWith(color: Colors.black),
+                          ),
                         ),
                         VerticalSpace(10.h),
-                        Row(
-                          children: [
-                            SvgPicture.asset(AssetsConstants.timeIconSvg),
-                            HorizSpace(8.w),
-                            Text('20 Mins',
-                                style: theme.textTheme.bodyText1
-                                    ?.copyWith(fontWeight: FontWeight.w400)),
-                          ],
+                        Padding(
+                          padding: defaultPadding,
+                          child: Row(
+                            children: [
+                              SvgPicture.asset(AssetsConstants.timeIconSvg),
+                              HorizSpace(8.w),
+                              Text('20 Mins',
+                                  style: theme.textTheme.bodyText1
+                                      ?.copyWith(fontWeight: FontWeight.w400)),
+                            ],
+                          ),
                         ),
                         VerticalSpace(15.h),
                         PrimaryButton(
+                          onPressed: () =>
+                              context.router.push(VideoCallingScreen()),
                           height: 40.h,
                           width: 90.w,
                           label: '',
@@ -76,6 +88,7 @@ class VideoScreen extends StatelessWidget {
                             ],
                           ),
                         ),
+                        VerticalSpace(10.h),
                       ],
                     ),
                   ),
@@ -129,7 +142,8 @@ class VideoScreen extends StatelessWidget {
           Expanded(
             child: ListView.separated(
               primary: false,
-              itemBuilder: (context, index) => const CourseVideoContainer(),
+              itemBuilder: (context, index) =>
+                  index == 6 ? VerticalSpace(10.h) : CourseVideoContainer(),
               separatorBuilder: (context, index) {
                 return VerticalSpace(10.h);
               },
