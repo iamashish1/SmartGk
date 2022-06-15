@@ -15,6 +15,7 @@ class CategoryListScreen extends StatelessWidget {
       appBarTitle: 'Category',
       hasLeading: false,
       child: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
             VerticalSpace(20.h),

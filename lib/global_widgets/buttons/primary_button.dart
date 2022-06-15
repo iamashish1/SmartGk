@@ -32,26 +32,34 @@ class PrimaryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    return InkWell(
-      onTap: onPressed,
-      child: Align(
-        alignment: align ?? Alignment.topCenter,
-        child: Container(
-          height: height ?? 50.h,
-          width: width ?? 310.w,
-          decoration: BoxDecoration(
-            color: color ?? theme.colorScheme.background,
-            borderRadius: BorderRadius.circular(
-              radius ?? 10,
+    return Align(
+      alignment: align ?? Alignment.topCenter,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(
+          radius ?? 10,
+        ),
+        child: Material(
+          color: color ?? theme.colorScheme.primary,
+          child: InkWell(
+            splashColor: Colors.white.withOpacity(
+              0.5,
+            ),
+            onTap: onPressed,
+            child: Container(
+              height: height ?? 50.h,
+              width: width ?? 310.w,
+              decoration: const BoxDecoration(
+                color: Colors.transparent,
+              ),
+              child: child ??
+                  Center(
+                    child: Text(
+                      label,
+                      style: labelStyle ?? theme.textTheme.button,
+                    ),
+                  ),
             ),
           ),
-          child: child ??
-              Center(
-                child: Text(
-                  label,
-                  style: labelStyle ?? theme.textTheme.button,
-                ),
-              ),
         ),
       ),
     );

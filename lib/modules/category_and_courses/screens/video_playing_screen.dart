@@ -42,41 +42,49 @@ class _VideoPlayingScreenState extends State<VideoPlayingScreen> {
               controller: _betterPlayerController,
             ),
           ),
-          VerticalSpace(10.h),
-          Padding(
-            padding: defaultPadding,
-            child: Text("4. Bibendum sit rutrum felis ac uta massa.",
-                style: theme.textTheme.headline2
-                    ?.copyWith(fontWeight: FontWeight.bold)),
-          ),
-          VerticalSpace(10.h),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25),
-            child: Text(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat suspendisse pulvinar sapien, senectus in nam urna nisl. Urna nunc sagittis donec ultricies.",
-                style: theme.textTheme.bodyText2!
-                    .copyWith(color: Colors.black, fontSize: 14)),
-          ),
-          VerticalSpace(10.h),
-          Padding(
-            padding: defaultPadding,
-            child: Text('Next Video',
-                style: theme.textTheme.headline2
-                    ?.copyWith(fontSize: 18, fontWeight: FontWeight.bold)),
-          ),
-          VerticalSpace(10.h),
           Expanded(
-            child: ListView.separated(
-              padding: EdgeInsets.zero,
-              primary: false,
-              itemBuilder: (context, index) =>
-                  index == 6 ? VerticalSpace(20.h) : CourseVideoContainer(),
-              separatorBuilder: (context, index) {
-                return VerticalSpace(10.h);
-              },
-              itemCount: 7,
+              child: SingleChildScrollView(
+            primary: true,
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                VerticalSpace(10.h),
+                Padding(
+                  padding: defaultPadding,
+                  child: Text("4. Bibendum sit rutrum felis ac uta massa.",
+                      style: theme.textTheme.headline2
+                          ?.copyWith(fontWeight: FontWeight.bold)),
+                ),
+                VerticalSpace(10.h),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: Text(
+                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat suspendisse pulvinar sapien, senectus in nam urna nisl. Urna nunc sagittis donec ultricies.",
+                      style: theme.textTheme.bodyText2!
+                          .copyWith(color: Colors.black, fontSize: 14)),
+                ),
+                VerticalSpace(10.h),
+                Padding(
+                  padding: defaultPadding,
+                  child: Text('Next Video',
+                      style: theme.textTheme.headline2?.copyWith(
+                          fontSize: 18, fontWeight: FontWeight.bold)),
+                ),
+                ListView.separated(
+                  shrinkWrap: true,
+                  physics: const BouncingScrollPhysics(),
+                  padding: EdgeInsets.symmetric(vertical: 10.h),
+                  primary: false,
+                  itemBuilder: (context, index) => const CourseVideoContainer(),
+                  separatorBuilder: (context, index) {
+                    return VerticalSpace(10.h);
+                  },
+                  itemCount: 7,
+                ),
+              ],
             ),
-          ),
+          ))
         ],
       ),
     );

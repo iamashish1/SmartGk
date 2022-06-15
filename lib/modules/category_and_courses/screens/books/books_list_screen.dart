@@ -29,30 +29,35 @@ class BooksListScreen extends StatelessWidget {
             placeholder: 'Search Books',
             width: 340.w,
           ),
-          VerticalSpace(5.h),
-          PrimaryButton(
-            radius: 20,
-            width: 170.w,
-            height: 30.h,
-            align: Alignment.centerRight,
-            label: '',
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Sort by: Name A-Z',
-                  style: theme.textTheme.bodyText2
-                      ?.copyWith(fontSize: 14, color: Colors.white),
-                ),
-                Icon(
-                  Icons.arrow_drop_down_outlined,
-                  size: 18,
-                  color: Colors.white,
-                )
-              ],
+          VerticalSpace(10.h),
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 30.w,
+            ),
+            child: PrimaryButton(
+              radius: 20,
+              width: 170.w,
+              height: 30.h,
+              align: Alignment.centerRight,
+              label: '',
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Sort by: Name A-Z',
+                    style: theme.textTheme.bodyText2
+                        ?.copyWith(fontSize: 14, color: Colors.white),
+                  ),
+                  const Icon(
+                    Icons.arrow_drop_down_outlined,
+                    size: 18,
+                    color: Colors.white,
+                  )
+                ],
+              ),
             ),
           ),
-          VerticalSpace(5.h),
+          VerticalSpace(10.h),
           Expanded(
             child: ShadowContainer(
               padding: EdgeInsets.symmetric(vertical: 10),
@@ -64,7 +69,7 @@ class BooksListScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return InkWell(
                       onTap: () => context.router.push(
-                        BookDetailScreen(),
+                        const BookDetailScreen(),
                       ),
                       child: Container(
                         color: Colors.white,

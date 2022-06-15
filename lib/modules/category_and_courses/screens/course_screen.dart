@@ -25,10 +25,13 @@ class CourseScreen extends StatelessWidget {
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
             SliverAppBar(
-              leading: const Icon(
-                Icons.arrow_back,
-                size: 30,
-                color: Colors.white,
+              leading: InkWell(
+                onTap: () => Navigator.pop(context),
+                child: const Icon(
+                  Icons.arrow_back,
+                  size: 35,
+                  color: Colors.white,
+                ),
               ),
               expandedHeight: 160.h,
               floating: false,
@@ -43,6 +46,7 @@ class CourseScreen extends StatelessWidget {
           ];
         },
         body: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -399,8 +403,7 @@ class CourseScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     RatingBar.builder(
-                      glow: false,
-                      initialRating: 1,
+                      initialRating: 3,
                       unratedColor: Colors.grey,
                       minRating: 0,
                       direction: Axis.horizontal,
@@ -433,6 +436,14 @@ class CourseScreen extends StatelessWidget {
                       ),
                     ),
                     VerticalSpace(20.h),
+                    PrimaryButton(
+                      label: 'Review',
+                      width: 112,
+                      height: 40,
+                      labelStyle: theme.textTheme.button?.copyWith(
+                        fontWeight: FontWeight.w500,
+                      ),
+                    )
                   ],
                 ),
               ),

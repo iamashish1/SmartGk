@@ -18,8 +18,11 @@ class CategoryScreen extends StatelessWidget {
     return PrimaryScaffold(
       appBarTitle: 'Category Name',
       child: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Padding(
-          padding: defaultPadding,
+          padding: defaultPadding.copyWith(
+            bottom: 20,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -196,7 +199,6 @@ class CategoryScreen extends StatelessWidget {
                   },
                   separatorBuilder: (co, i) => VerticalSpace(10.h),
                   itemCount: 4),
-              VerticalSpace(20.h),
             ],
           ),
         ),

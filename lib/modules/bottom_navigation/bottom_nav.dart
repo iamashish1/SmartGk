@@ -32,24 +32,25 @@ class _BottomNavState extends State<BottomNav> {
   List<PersistentBottomNavBarItem> _navBarsItems() {
     return [
       PersistentBottomNavBarItem(
-        icon: SvgPicture.asset(AssetsConstants.homeIcon),
+        inactiveIcon: SvgPicture.asset(AssetsConstants.homeIcon),
+        icon: SvgPicture.asset(AssetsConstants.selectedHomeIcon),
         activeColorPrimary: Theme.of(context).colorScheme.primary,
-        inactiveColorPrimary: Colors.black,
       ),
       PersistentBottomNavBarItem(
-        icon: SvgPicture.asset(AssetsConstants.courseIcon),
+        inactiveIcon: SvgPicture.asset(AssetsConstants.courseIcon),
+        icon: SvgPicture.asset(AssetsConstants.selectedCourseIcon),
         activeColorPrimary: Theme.of(context).colorScheme.primary,
-        inactiveColorPrimary: Colors.black,
       ),
       PersistentBottomNavBarItem(
-        icon: SvgPicture.asset(AssetsConstants.bookIcon),
+        inactiveIcon: SvgPicture.asset(AssetsConstants.bookIcon),
+        icon: SvgPicture.asset(AssetsConstants.selectedBookIcon),
         activeColorPrimary: Theme.of(context).colorScheme.primary,
-        inactiveColorPrimary: Colors.black,
       ),
       PersistentBottomNavBarItem(
-        icon: SvgPicture.asset(AssetsConstants.profileIcon),
+        title: 'Home',
+        inactiveIcon: SvgPicture.asset(AssetsConstants.profileIcon),
+        icon: SvgPicture.asset(AssetsConstants.selectedProfileIcon),
         activeColorPrimary: Theme.of(context).colorScheme.primary,
-        inactiveColorPrimary: Colors.black,
       ),
     ];
   }
@@ -58,7 +59,6 @@ class _BottomNavState extends State<BottomNav> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _controller = PersistentTabController(initialIndex: 0);
   }

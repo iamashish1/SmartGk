@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smartgk/constants/assets_constants.dart';
+import 'package:smartgk/constants/widget_constants.dart';
+import 'package:smartgk/global_widgets/helper_widget/black_space.dart';
 
 class PrimaryScaffold extends StatelessWidget {
   final String? appBarTitle;
@@ -21,27 +23,41 @@ class PrimaryScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: theme.colorScheme.onSecondary,
       extendBody: true,
       appBar: CardWidget(
         child: SizedBox(
             height: 80.h,
             child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 30,
-                vertical: 10,
-              ),
+              padding: defaultPadding,
               child: appbarChild ??
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       Visibility(
                         visible: hasLeading == null || hasLeading == true,
-                        child: InkWell(
-                            onTap: () => Navigator.pop(context),
-                            child:
-                                SvgPicture.asset(AssetsConstants.backIconSvg)),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: SvgPicture.asset(
+                            AssetsConstants.backIconSvg,
+                            fit: BoxFit.cover,
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.white,
+                            elevation: 0,
+                            shape: const CircleBorder(),
+                            padding: const EdgeInsets.all(10),
+                          ),
+                        ),
                       ),
-                      const Spacer(),
+                      Spacer(
+                          flex: hasLeading != null && hasLeading == false
+                              ? 5
+                              : 3),
                       Text(
                         appBarTitle ?? '',
                         style: theme.textTheme.headline2?.copyWith(
@@ -49,7 +65,9 @@ class PrimaryScaffold extends StatelessWidget {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      const Spacer(),
+                      Spacer(
+                        flex: 5,
+                      ),
                     ],
                   ),
             )),
@@ -82,3 +100,16 @@ class CardWidget extends StatelessWidget with PreferredSizeWidget {
   @override
   Size get preferredSize => Size(double.infinity, 80.h);
 }
+// MaterialButton(
+                            
+//                               materialTapTargetSize:
+//                                   MaterialTapTargetSize.shrinkWrap,
+//                               padding: EdgeInsets.all(0),
+//                               shape: const CircleBorder(),
+//                               onPressed: () {
+//                                 Navigator.pop(context);
+//                               },
+//                               child: SvgPicture.asset(
+//                                 AssetsConstants.backIconSvg,
+//                                 fit: BoxFit.cover,
+//                               )),
